@@ -126,9 +126,9 @@ My research concerns the structure of Lagrangian fibration on symplectic varieti
 \begin{definition} A normal variety \(X\) is {\bf symplectic} if it admits a non-degenerate 
         symplectic form \(\sigma \in H^0(X^\mathrm{sm}, \Omega_{X^\mathrm{sm}}^2)\) which 
         extends holomorphically onto a resolution of singularities \(\pi: Y \to X\).
-        In this setting, a {\bf Lagrangian fibration} is a proper morphism \(f: X \to B\) 
-        with connected half-dimensional fibers, such that \(\sigma|_{X_b} = 0\) for any 
-        fiber \(X_b\).
+        In this setting, a {\bf Lagrangian fibration} is a proper surjective morphism 
+        \(f: X \to B\) with connected half-dimensional fibers, such that 
+        \(\sigma|_{X_b} = 0\) for any fiber \(X_b\).
 \end{definition}
 
 We will need to assume that \(X\) is compact for most of our results. Additionally, 
@@ -155,7 +155,7 @@ My main results further classify the structure of the fibers.
 Recall that an Abelian variety is Hodge-generic if it admits no extra Hodge tensors. 
 In this case, it is simple and carries no extra symmetries.
 
-\begin{corollary}
+\begin{corollary} \label{fiber-structure}
     The very general fiber \(X_b\) is isogenous to a product of Abelian varieties 
     \(A_1 \times \cdots \times A_{n/h}\), where each \(A_i\) is Hodge-generic and 
     \(A_i\) is not isogenous to \(A_j\) for \(i \neq j\).
@@ -175,7 +175,7 @@ manifolds, which should be thought of as the natural generalization of K3 surfac
 % admitting a Lagrangian fibration, we can say much more about the Mumford--Tate group 
 % of its very general fiber. 
 
-\begin{theorem}
+\begin{theorem} \label{general-mt}
     Let \(\mathcal{X}\) be a deformation class of hyper-K\"ahler manifolds such that 
     \begin{enumerate}
         \item all members \(X \in \mathcal{X}\) have second Betti number 
@@ -221,18 +221,88 @@ For the isotrivial case (ii), the result \(X_b \sim E^n\) was first proven in
 
 \section{Background and motivation}
 
-Much of modern research is directed at understanding the deformation classes of 
-hyper-K\"ahler manifolds. There are currently four known deformation types: the 
-infinite families \(K3^{[n]}\) and \(\mathrm{Kum}_n\), and the two sporadic types 
-\(OG6\) and \(OG10\) (loc. cit. O'Grady). The SYZ Conjecture (cite below) predicts 
-that every deformation class \(\mathcal{X}\) 
+Hyper-K\"ahler manifolds arise naturally in the study of K-trivial varieties. 
+The following result is a classical theorem of Beauville--Bogomolov:
+\begin{theorem}[Beauville--Bogomolov Decomposition Theorem]
+    Let \(Z\) be a compact complex manifold with \(\omega_Z \simeq \mathcal{O}_Z\). 
+    Then there is a finite \'etale cover \(\pi: Z' \to Z\) such that \(Z'\) has the form 
+    \begin{equation*}
+        Z' = T \times \prod_i X_i \times \prod_j Y_j,
+    \end{equation*}
+    where \(T\) is a complex torus, the \(X_i\) are hyper-K\"ahler manifolds, and 
+    the \(Y_j\) are irreducible Calabi--Yau manifolds.
+\end{theorem}
 
+This theorem has since been generalized to allow for \(Z\) to have klt singularities 
+(Bakker--Guenancia--Lehn); in this case, the \(X_i\) are irreducible holomorphic 
+symplectic varieties, a condition stronger than primitive symplectic but weaker than 
+hyper-K\"ahler.
 
+Thus the problem of understanding families of K-trivial varieties boils down to 
+understanding families of complex tori, hyper-K\"ahlers, and ICYs. The former is 
+largely classical, while the latter is also somewhat well-studied, thanks to work 
+of Laza--Friedman (loc. cit.***) In contrast, we have a relatively poor understanding 
+of the deformation classes of hyper-K\"ahler manifolds.
 
+Given a polarized hyper-K\"ahler manifold \((X, H)\), one can construct its deformation 
+space as a type IV Shimura variety: take \(L = H^\perp \subsetneq H^2(X, \Z)\), define 
+\[\mathcal{D}_H = \{[\sigma] \in \bbP L_\C \mid \sigma \wedge \sigma = 0, \quad
+\sigma \wedge \ol\sigma > 0\}.\]
+Then the deformation space of \(X\) is constructed as 
+\begin{equation*}
+    \mathcal{X} = \leftQ{\mathcal{D}}{\Gamma} = 
+    \leftQ{\frac{SO(2, b_2-3)}{SO(2) \times SO(b_2-3)}}{\Gamma},
+\end{equation*}
+where \(b_2 = \dim H^2(X, \C)\).
+
+As such, to constuct a deformation space of hyper-K\"ahler manifold, it suffices 
+to exhibit one member. There are currently four known deformation types: the infinite 
+families \(K3^{[n]}\) and \(\mathrm{Kum}_n\), occuring in every even dimension \(2n\),
+and the two sporadic types \(OG6\) and \(OG10\) (loc. cit. O'Grady), occuring in 
+dimensions 6 and 10 respectively. 
+
+Now consider the following central conjecture.
+\begin{conjecture}(Hyper-K\"ahler SYZ Conjecture)
+    Let \(\mathcal{X}\) be a deformation space of hyper-K\"ahler manifolds. There 
+    exists some \(X \in \mathcal{X}\) which admits a Lagrangian fibration \(f: X \to B\).
+\end{conjecture}
+
+If true, one could make statements about all deformation classes of hyper-K\"ahlers 
+by simply proving them for those admitting Lagrangian fibrations. A recent paper of 
+(engel 25***) assumed the SYZ conjecture to show that there are only finitely 
+many deformation classes of hyper-K\"ahlers in any fixed dimension. 
+
+As such, we believe it important to understand the structure of Lagrangian fibrations. 
+Incidentally, it turns out that they carry many constraints.
+\begin{theorem}
+    Let \(X\) be a hyper-K\"ahler manifold of dimension \(2n\), \(f: X \to B\) a proper 
+    surjective morphism with connected fibers, \(B \neq \{p\}\). The following all hold.
+    \begin{enumerate}
+        \item[] [Greb Lehn 14] \(f\) is a Lagrangian fibration.
+        \item[] [Matsushita 99] The smooth fibers of \(f\) are Abelian varieties. 
+        \item[] [Matsushita 14] \(B\) is \(\Q\)-Fano, \(\Q\)-factorial, and klt with 
+        Picard rank 1. There is an isomorphism \(\IH^*(B, \Q) \simeq H^*(\bbP^n, \Q)\).
+        \item[] [Hwang 08] If \(B\) is smooth, then \(B \simeq \bbP^n\).
+        \item[] [Bakker] If \(f\) is not isotrivial, then it varies maximally, i.e. 
+        the period map \(\cP: B^\circ \to \cA_{n, \eta}\) has an \(n\)-dimensional image.
+    \end{enumerate}
+\end{theorem}
+
+My results \Cref{fiber-structure}, \Cref{general-mt} aim to strenthen (2). Furthermore, 
+as we will see in \S 3, this may yet have consequences for (3). The base \(B\) is a 
+common area of study in this field, due to the following conjecture of Matsushita, 
+partially resolved due to Hwang in (4).
+
+\begin{conjecture}[Matsushita]
+    Let \(X\) be a hyper-K\"ahler manifold, \(f: X \to B\) a Lagrangian fibration. 
+    Then \(B \simeq \bbP^n\).
+\end{conjecture}
 
 
 
 \section{Future directions}
+
+
 
 
 
