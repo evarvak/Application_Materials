@@ -1,0 +1,239 @@
+
+\documentclass[12pt]{amsart}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{amssymb}
+% \usepackage{mathabx}
+\usepackage{tikz-cd}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage[nameinlink, capitalize]{cleveref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=green,      
+    urlcolor=cyan,
+    citecolor=magenta,
+    pdftitle={Notes of my current research},
+    pdfpagemode=FullScreen,
+}
+\urlstyle{same}
+% \usepackage{caption} 
+% \captionsetup[table]{skip=10pt}
+% \usepackage{subfiles}
+
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\sph}{\mathbb{S}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\id}{\mathrm{id}}
+
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbP}{\mathbb{P}}
+
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cU}{\mathcal{U}}
+
+\newcommand{\IH}{\mathrm{IH}}
+
+\newcommand{\Sp}{\mathrm{Sp}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\U}{\mathrm{U}}
+\newcommand{\gr}{\mathrm{gr}}
+\newcommand{\ol}{\overline}
+\newcommand{\ul}{\underline}
+\newcommand{\wt}{\widetilde}
+\newcommand{\wh}{\widehat}
+\newcommand{\codim}{\mathrm{codim}}
+
+\newcommand{\rightQ}[2]{\left.\raisebox{.2em}{$#1$}\middle/\raisebox{-.2em}{$#2$}\right.}
+\newcommand{\leftQ}[2]{\left.\raisebox{-.2em}{$#2$}\middle\backslash\raisebox{.2em}{$#1$}\right.}
+
+\DeclareMathOperator{\im}{\mathrm{im}}
+
+
+\NewDocumentCommand{\ltranspose}{m}{
+    \ensuremath{\prescript{\mathsf{T}}{}{{#1}}}
+}
+
+\NewDocumentCommand{\transpose}{m}{
+    \ensuremath{{#1}^{\mathsf{T}}}
+}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{section}
+
+
+
+
+\title{Research statement}
+\author{Edward Varvak}
+\address{\parbox{\linewidth}{
+Department of Mathematics \\
+University of Chicago \\
+5734 S University Ave \\
+Chicago, IL 60637 \\}}
+
+\email{varvak@uchicago.edu}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Summary of my results}
+
+My research concerns the structure of Lagrangian fibration on symplectic varieties. 
+
+\begin{definition} A normal variety \(X\) is {\bf symplectic} if it admits a non-degenerate 
+        symplectic form \(\sigma \in H^0(X^\mathrm{sm}, \Omega_{X^\mathrm{sm}}^2)\) which 
+        extends holomorphically onto a resolution of singularities \(\pi: Y \to X\).
+        In this setting, a {\bf Lagrangian fibration} is a proper morphism \(f: X \to B\) 
+        with connected half-dimensional fibers, such that \(\sigma|_{X_b} = 0\) for any 
+        fiber \(X_b\).
+\end{definition}
+
+We will need to assume that \(X\) is compact for most of our results. Additionally, 
+we will want \(X\) to be ``irreducible'' in a sense, which will be made more precise 
+in (*** link below). To that end, the most general class of symplectic varieties we 
+will work with is the primitive symplectic varieties. 
+
+\begin{definition}
+    A compact symplectic variety \(X\) is {\bf primitive symplectic} if it satisfies 
+    \(H^1(X, \mathcal{O}_X) = 0\) and \(\sigma\) is unique up to scaling, i.e. 
+    \(H^0(X, \Omega_X^2) = \C \sigma\).
+\end{definition}
+
+As we will see (*** link below), when \(X\) is a primitive symplectic variety admitting 
+a Lagrangian fibration \(f: X \to B\), the smooth fibers \(X_b\) are Abelian varieties. 
+My main results further classify the structure of the fibers.
+
+\begin{theorem} \label{mt-classification}
+    Let \(X\) be a primitive symplectic variety of dimension \(2n\) admitting a 
+    Lagrangian fibration \(f: X \to B\). If \(f\) is not isotrivial, the Mumford--Tate 
+    group of the very general fiber \(X_b\) is isogenous to \((\Sp_{2h})^{n/h}\).
+\end{theorem}
+
+Recall that an Abelian variety is Hodge-generic if it admits no extra Hodge tensors. 
+In this case, it is simple and carries no extra symmetries.
+
+\begin{corollary}
+    The very general fiber \(X_b\) is isogenous to a product of Abelian varieties 
+    \(A_1 \times \cdots \times A_{n/h}\), where each \(A_i\) is Hodge-generic and 
+    \(A_i\) is not isogenous to \(A_j\) for \(i \neq j\).
+\end{corollary}
+
+The most well-studied class of primitive symplectic varieties consists of hyper-K\"ahler 
+manifolds, which should be thought of as the natural generalization of K3 surfaces.
+
+\begin{definition}
+    A compact complex manifold \(X\) is {\bf hyper-K\"ahler} if \(X\) is simply connected 
+    and its algebra of global holomorphic forms is generated by a non-degenerate 
+    symplectic form: 
+    \(H^0(X, \Omega_X^{2p}) = \C \sigma^p,\quad H^0(X, \Omega_X^{2p+1}) = 0.\)
+\end{definition}
+
+% In the case where \(X\) is a sufficiently general among hyper-K\"ahler manifolds 
+% admitting a Lagrangian fibration, we can say much more about the Mumford--Tate group 
+% of its very general fiber. 
+
+\begin{theorem}
+    Let \(\mathcal{X}\) be a deformation class of hyper-K\"ahler manifolds such that 
+    \begin{enumerate}
+        \item all members \(X \in \mathcal{X}\) have second Betti number 
+        \(b_2(X) \geq 7\),
+        \item there exists some \(X \in \mathcal{X}\) admitting a Lagrangian fibration.
+    \end{enumerate}
+    Choose \(X\) to be general among the hyper-K\"ahler manifolds admitting a Lagrangian 
+    fibration, \(f: X \to B\). If \(X_b\) is a very general fiber of \(f\), 
+    then it has Mumford--Tate group \(\mathbf{MT}(X_b) = \mathrm{GSp}_{2n}\), i.e. 
+    \(X_b\) is Hodge-generic.
+\end{theorem}
+
+These results largely came about through understanding the monodromy of the family \(f\). 
+To be more precise, let \(f: X^\circ \to B^\circ\) be the restriction of \(f\) to 
+its regular points, and let \(V = R^1 f_* \Z_{X^\circ}\), viewed as a local system. 
+
+\begin{theorem}
+    Suppose that \(X\) is primitive symplectic, \(f: X \to B\) a Lagrangian fibration, 
+    \(V_\C = V \otimes_\Z \C\) the underlying \(\C\)-representation of 
+    \(\pi_1(B^\circ)\). 
+    \begin{enumerate}
+        \item If \(f\) is not isotrivial, then \(V_\C\) is irreducible.
+        \item If \(f\) is isotrivial, then its smooth fibers are isogenous to 
+        \(E^n\), for \(E\) an elliptic curve. Furthermore, if \(K\) is the endomorphism 
+        field of \(E\) (possibly \(\Q\)), then \(V_K = U_1 \oplus U_2\) splits into 
+        two geometrically irreducible components.
+    \end{enumerate}
+\end{theorem}
+
+\begin{remark}
+There are a few clarifications to be made regarding the results and contributions. 
+For the non-isotrivial case (1), the later result of \Cref{mt-classification} 
+determines that a finite-index subgroup of the image of \(\pi_1(B^\circ)\) lies in 
+\((\mathrm{Sp}_{2h, \Q})^{n/h}\), and acts on \(V_\C\) via a direct sum of standard representations. 
+Such a representation is would not be irreducible, if not for the unaccounted finite 
+part of the monodromy transitively permuting the irreducible factors.
+For the isotrivial case (ii), the result \(X_b \sim E^n\) was first proven in 
+(*** KLM), though we produced an alternative proof of this fact. 
+\end{remark}
+
+
+
+
+\section{Background and motivation}
+
+Much of modern research is directed at understanding the deformation classes of 
+hyper-K\"ahler manifolds. There are currently four known deformation types: the 
+infinite families \(K3^{[n]}\) and \(\mathrm{Kum}_n\), and the two sporadic types 
+\(OG6\) and \(OG10\) (loc. cit. O'Grady). The SYZ Conjecture (cite below) predicts 
+that every deformation class \(\mathcal{X}\) 
+
+
+
+
+
+
+\section{Future directions}
+
+
+
+\end{document}
