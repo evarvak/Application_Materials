@@ -205,7 +205,7 @@ its regular points, and let \(V = R^1 f_* \Z_{X^\circ}\), viewed as a local syst
     \end{enumerate}
 \end{theorem}
 
-\begin{remark}
+\begin{remark} \label{remark-monodromy}
 There are a few clarifications to be made regarding the results and contributions. 
 For the non-isotrivial case (1), the later result of \Cref{mt-classification} 
 determines that a finite-index subgroup of the image of \(\pi_1(B^\circ)\) lies in 
@@ -262,7 +262,7 @@ and the two sporadic types \(OG6\) and \(OG10\) (loc. cit. O'Grady), occuring in
 dimensions 6 and 10 respectively. 
 
 Now consider the following central conjecture.
-\begin{conjecture}(Hyper-K\"ahler SYZ Conjecture)
+\begin{conjecture}(Hyper-K\"ahler SYZ Conjecture) \label{conjecture-syz}
     Let \(\mathcal{X}\) be a deformation space of hyper-K\"ahler manifolds. There 
     exists some \(X \in \mathcal{X}\) which admits a Lagrangian fibration \(f: X \to B\).
 \end{conjecture}
@@ -272,7 +272,7 @@ by simply proving them for those admitting Lagrangian fibrations. A recent paper
 (engel 25***) assumed the SYZ conjecture to show that there are only finitely 
 many deformation classes of hyper-K\"ahlers in any fixed dimension. 
 
-As such, we believe it important to understand the structure of Lagrangian fibrations. 
+As such, I believe it important to understand the structure of Lagrangian fibrations. 
 Incidentally, it turns out that they carry many constraints.
 \begin{theorem}
     Let \(X\) be a hyper-K\"ahler manifold of dimension \(2n\), \(f: X \to B\) a proper 
@@ -284,7 +284,7 @@ Incidentally, it turns out that they carry many constraints.
         Picard rank 1. There is an isomorphism \(\IH^*(B, \Q) \simeq H^*(\bbP^n, \Q)\).
         \item[] [Hwang 08] If \(B\) is smooth, then \(B \simeq \bbP^n\).
         \item[] [Bakker] If \(f\) is not isotrivial, then it varies maximally, i.e. 
-        the period map \(\cP: B^\circ \to \cA_{n, \eta}\) has an \(n\)-dimensional image.
+        the period map \(\cP: B^\circ \to \cA_{n}\) has an \(n\)-dimensional image.
     \end{enumerate}
 \end{theorem}
 
@@ -302,6 +302,163 @@ partially resolved due to Hwang in (4).
 
 \section{Future directions}
 
+\subsection{A geometric characterization for the Mumford--Tate splitting}
+Let \(f: X \to B\) be a Lagrangian fibration, and suppose the Mumford--Tate 
+group of the very general fiber \(X_b\) is of the form 
+\begin{equation} \label{eq-mt-factors}
+    \mathbf{MT}(X_b) \sim (\Sp_{2h})^k, \quad k \neq 1.
+\end{equation}
+It is not hard to see that such a Lagrangian fibration exists. For example, we can take 
+\(g: S \to \bbP^1\) to be an elliptically fibered K3 surface; the Hilbert scheme of points 
+\(X := S^{[n]}\) is hyper-K\"ahler, and when \(g\) is not isotrivial, \(X\) admits 
+a Lagrangian fibration 
+\[f = g^{[n]}: X \to \bbP^n, \quad \mathbf{MT}(X_b) \sim (\SL_2)^n.\]
+
+More generally, if we allow \(X\) to be primitive symplectic, it is easy to see that 
+we can attain every positive integer pair \((h, k)\) in \eqref{eq-mt-factors}: 
+by \Cref{general-mt}, we can find a Lagrangian fibration \(g: Y \to \bbP^h\) with 
+\(\mathbf{MT}(Y_b) \sim \Sp_{2h}\), and taking the \(k\)-th symmetric power of 
+this morphism produces 
+\begin{equation*}
+    X = Y^{(k)} \xrightarrow{g^{(k)}} (\bbP^h)^{(k)},
+\end{equation*}
+a Lagrangian fibration realizing the Mumford--Tate group \((\Sp_{2h})^k\).
+
+However, notice that the base \((\bbP^h)^{(k)}\) is easily distinguished from 
+projective space when \(h \neq 1\). This ensures that the argument above does not 
+provide a {\it hyper-K\"ahler} manifold \(X\) realizing the prescribed Lagrangian 
+fibration \(f: X \to B\).
+
+
+\begin{question} \label{question-classification}
+    Does there exist a hyper-K\"ahler manifold (or even an irreducible holomorphic 
+    symplectic variety) \(X\) admitting a Lagrangian fibration \(f: X \to B\) 
+    such that \(\mathbf{MT}(X_b) \sim (\Sp_{2h})^k\) for some \(h \neq 1, n\)?
+\end{question}
+
+I expect the answer to be negative. To motivate this somewhat, let 
+\(V = R^1 f_* \Z_{X^\circ}\) be the local system underlying \(f\).
+I claim there exists a ramified cover \(\pi: B' \to B\) which resolves the finite irreducible 
+part of the monodromy, as referenced in \Cref{remark-monodromy}. To be more precise, 
+\(\pi^* V_\Q = U_1 \oplus \cdots \oplus U_k\), and the monodromy action on 
+each \(U_i\) factors through the standard representation of \(\Sp_{2h, \Q}\).
+
+Now, using some methods from (bakker-schnell***), we can extend the isomorphism 
+\(\cT_{B^\circ} \xrightarrow{\sim} F^1 \cV\) to the whole tangent bundle 
+\(\cT_{B^\mathrm{sm}}\). By a local computation, we can pull this isomorphism back 
+to get a splitting of the tangent bundle of \(B'\):
+\begin{equation*}
+    \cT_{{B'}^\mathrm{sm}} \simeq F^1 \ol{\mathcal{U}}_1 \oplus \cdots 
+    \oplus F^1 \ol{\mathcal{U}}_k.
+\end{equation*}
+
+Another result of (bakker-schnell***) shows that each \(F^1 \ol{\mathcal{U}}_i\) is closed 
+under the Lie bracket, thus giving a foliation of \(B'\). By some more Hodge theory, 
+we can actually show that the general leaf of this foliation is algebraic. 
+Altogether, we can show that this produces the following diagram:
+\begin{equation*}
+\begin{tikzcd}
+X' \arrow{d}{f'} & X \arrow{d}{f} \\
+B' \arrow{r}{\pi} \arrow[d, dashed, "\varphi^k"] & B \arrow[d, dashed, "\varphi^{(k)}"] \\
+Z^k \arrow{r}{\ol{\pi}} & Z^{(k)}
+\end{tikzcd}
+\end{equation*}
+
+Now we can rephrase \Cref{question-classification} as follows: 
+\begin{question}
+    Does the map \(\varphi^{(k)}: B \dashrightarrow Z^{(k)}\) extend to a morphism?
+\end{question}
+If indeed it does, then we must have an inclusion on the level of intersection 
+cohomology:
+\begin{equation*}
+    \IH^*(Z^{(k)}, \Q) = \mathrm{Sym}^k(\IH(Z, \Q)) \subseteq 
+    \IH^*(B, \Q) = H^*(\bbP^n, \Q).
+\end{equation*}
+
+But \(H^*(\bbP^n, \Q)\) is minimal among \(n\)-dimensional K\"ahler manifolds, so 
+we must have equality everywhere. This is impossible unless \(\dim Z = 1\), 
+so that \(\IH^*(Z, \Q) = H^*(\bbP^1, \Q)\), which forces \(Z \simeq \bbP^1\). 
+This immediately gives \(h = 1\) and \(k = n\), thereby providing a negative answer to
+\Cref{question-classification}.
+
+Another related question worth pursuing may also be seen in this diagram:
+\begin{question} \label{question-birational-arrow}
+    Is the map \(\varphi^{(k)}: B \dashrightarrow Z^{(k)}\) birational?
+\end{question}
+Suppose it were. By a theorem of Sacc\'a (***), we can compactify the map 
+\(\varphi^{(k)} \circ f: X \dashrightarrow Z^{(k)}\) to a morphism 
+\(g: Y \to Z^{(k)}\), where \(Y\) is a smooth hyper-K\"ahler manifold birational 
+to \(X\), and \(g: Y \to Z^{(k)}\) is a Lagrangian fibration agreeing with 
+\(\varphi^{(k)} \circ f\) away from the indeterminacy locus.
+
+Now by a similar intersection cohomology argument, we have
+\(\IH^*(Z, \Q) = \IH^*(\bbP^1, \Q)\), forcing \(h = 1\) and \(k = n\), providing an 
+affirmitive answer to \Cref{question-classification}. However, in this setting, we 
+may be able to learn more about \(X\). Over \(\bbP^1\), we may be able to take 
+the variation of Hodge structures \(F^1 \mathcal{U}_i\) and produce a K3 surface 
+\(S \to \bbP^1\) realizing the VHS. If so, we can show that \(Y \simeq S^{[n]}\), 
+providing an affirmitive answer to the following question:
+\begin{question} \label{question-deformation-class}
+    Let \(X\) be a hyper-K\"ahler manifold, \(f: X \to B\) a Lagrangian fibration. 
+    Suppose \(\mathbf{MT}(X_b) \sim (\Sp_{2h})^k\), for \(h < n\). Does \(X\) belong 
+    to the deformation space \(K3^{[n]}\)?
+\end{question}
+
+It is possible that \Cref{question-birational-arrow} has a negative answer. In this case, 
+it may still be possible to attack \Cref{question-deformation-class} in other ways. 
+For instance, we may be able to show that the tangent bundle \(\cT_X\) splits 
+in the same way the local system does. We can try to integrate the resulting distributions, 
+which could give us a handle on how to construct \(X\) using lower-dimensional 
+hyper-K\"ahler manifolds.
+
+
+
+\subsection{Towards the hyper-K\"ahler Bogomolov--Mumford conjecture}
+
+Recall the classical theorem of Bogomolov--Mumford: an ample linear series on a 
+K3 surface contains a divisor supported on rational curves. An analogue of this 
+theorem remains open for hyper-K\"ahler manifolds.
+
+\begin{conjecture}[Hyper-K\"ahler Bogomolov--Mumford Conjecture] \label{conjecture-BM}
+    Let \(X\) be a hyper-K\"ahler manifold, \(L\) an ample line bundle on \(X\). 
+    Then there exists a uniruled divisor \(D \in |L|\).
+\end{conjecture}
+
+Currently, this conjecture is only known in full for the deformation types \(K3^{[n]}\) 
+and \(\mathrm{Kum}_n\). Currently, I do not even have an idea on how to attack it 
+in full generality, but \Cref{general-mt} may be useful in one aspect of this conjecture: 
+producing an abundence of rational curves. 
+
+If we start with \(X\) a general hyper-K\"ahler admitting a Lagrangian fibration 
+\(f: X \to B\) as in the assumptions of \Cref{general-mt}, the image of the 
+period map \(B^\circ \dashrightarrow \cA_n\) will be \(n\)-dimensional. On the other 
+hand, the product locus \(\cA_1 \times \cA_{n-1} \subseteq \cA_n\) has 
+codimension \(n-1\). The period image is Hodge-generic, so by Ax--Schanuel, it must 
+meet \(\cA_1 \times \cA_{n-1}\) in the expected dimension \(n - (n-1) = 1\). 
+
+In other words, there is a curve \(C^\circ \subseteq B^\circ\) over which the 
+family of Abelian varieties \(X_{C^\circ} \to C^\circ\) is isogenous to 
+a product family. It should be reasonable to show that over the boundary of \(C^\circ\), 
+the elliptic part of the family degenerates into a rational curve, while the 
+non-elliptic part remains non-degenerate. This gives rise to a uniruled algebraic 
+cycle of dimension \(n+1\) in \(\mathrm{CH}^*(X)\).
+
+Thus, we have methods of producing rational curves in the singular fibers of \(f\). 
+However, we want to produce rational curves on all hyper-K\"ahler manifolds, not simply 
+the ones admitting Lagrangian fibrations. If we assume \Cref{conjecture-syz}, 
+this reduces to the following question:
+\begin{question}
+    Let \(X\) be a hyper-K\"ahler manifold admitting a Lagrangian fibration \(f: X \to B\). 
+    Let \(Z \subseteq X\) be a singular rational curve contained in a singular fiber 
+    of \(f\), obtained as above. Let \(X'\) be a general deformation of \(X\); 
+    does \(Z\) deform to a rational curve \(Z' \subseteq X'\)?
+\end{question}
+
+Finally, if we truly hope at attacking \Cref{conjecture-BM}, we would want to break 
+a divisor \(D \in |L|\) into the union \(D \sim D^\mathrm{vert} + D^\mathrm{base}\), 
+where \(D\) is a uniruled divisor which is vertical with respect to the Lagrangian 
+fibration, and \(D^\mathrm{base}\) is a uniruled divisor which is pulled back from 
+the base. 
 
 
 
