@@ -21,8 +21,7 @@
     filecolor=green,      
     urlcolor=cyan,
     citecolor=magenta,
-    pdftitle={Notes of my current research},
-    pdfpagemode=FullScreen,
+    pdftitle={Research Statement},
 }
 \urlstyle{same}
 % \usepackage{caption} 
@@ -120,7 +119,10 @@ Chicago, IL 60637 \\}}
 
 \section{Summary of my results}
 
-My research concerns the structure of Lagrangian fibrations on symplectic varieties. 
+I aim to study symplectic varieties, which are important building blocks for varieties 
+whose canonical divisor is trivial. We will assume that the symplectic varieties 
+admit Lagrangian fibrations; this is a mild condition granting the 
+symplectic varieties extra structure.
 
 \begin{definition} A normal variety \(X\) is {\bf symplectic} if it admits a non-degenerate 
         symplectic form \(\sigma \in H^0(X^\mathrm{sm}, \Omega_{X^\mathrm{sm}}^2)\) which 
@@ -132,8 +134,7 @@ My research concerns the structure of Lagrangian fibrations on symplectic variet
 
 We will need to assume that \(X\) is compact for most of our results. Additionally, 
 we will want \(X\) to be ``irreducible'' in a sense, which will be made more precise 
-in \S 2. To that end, the most general class of symplectic varieties we 
-will work with is the primitive symplectic varieties. 
+in \S 2. 
 
 \begin{definition}
     A compact symplectic variety \(X\) is {\bf primitive symplectic} if it satisfies 
@@ -148,7 +149,8 @@ My main results further classify the structure of the fibers.
 \begin{theorem}[citation needed*] \label{mt-classification}
     Let \(X\) be a primitive symplectic variety of dimension \(2n\) admitting a 
     Lagrangian fibration \(f: X \to B\). If \(f\) is not isotrivial, the Mumford--Tate 
-    group of the very general fiber \(X_b\) is isogenous to \((\Sp_{2h})^{n/h}\).
+    group of the very general fiber \(X_b\) is isogenous to 
+    \(\mathbb{G}_m \cdot (\Sp_{2h})^{n/h}\).
 \end{theorem}
 
 Recall that an Abelian variety is Hodge-generic if it admits no extra Hodge tensors. 
@@ -165,7 +167,7 @@ manifolds, which should be thought of as the natural generalization of K3 surfac
 
 \begin{definition}
     A compact K\"ahler manifold \(X\) is {\bf hyper-K\"ahler} if \(X\) is simply connected 
-    and satisfies \(H^0(X, \Omega_X^{2p}) = \C \sigma^p,\quad H^0(X, \Omega_X^{2p+1}) = 0.\)
+    and satisfies \(H^0(X, \Omega_X^{2p}) = \C \sigma^p,\quad H^0(X, \Omega_X^{2p+1}) = 0\).
 \end{definition}
 
 % In the case where \(X\) is a sufficiently general among hyper-K\"ahler manifolds 
@@ -181,8 +183,8 @@ manifolds, which should be thought of as the natural generalization of K3 surfac
     \end{enumerate}
     Choose \(X\) to be general among the hyper-K\"ahler manifolds admitting a Lagrangian 
     fibration, \(f: X \to B\). If \(X_b\) is a very general fiber of \(f\), 
-    then it has Mumford--Tate group \(\mathbf{MT}(X_b) = \mathrm{GSp}_{2n}\), i.e. 
-    \(X_b\) is Hodge-generic.
+    then its Mumford--Tate group \(\mathbf{MT}(X_b)\) is isogenous to  
+    \(\mathrm{GSp}_{2n}\), i.e. \(X_b\) is Hodge-generic.
 \end{theorem}
 
 These results largely came about through understanding the monodromy of the family \(f\). 
@@ -191,7 +193,7 @@ its regular points, and let \(V = R^1 f_* \Z_{X^\circ}\), viewed as a local syst
 
 \begin{theorem}[\cite{varvak25}]
     Suppose that \(X\) is primitive symplectic, \(f: X \to B\) a Lagrangian fibration, and let
-    \(V_\C = V \otimes_\Z \C\) the underlying \(\C\)-representation of 
+    \(V_\C = V \otimes_\Z \C\) be the underlying \(\C\)-representation of 
     \(\pi_1(B^\circ)\). 
     \begin{enumerate}
         \item If \(f\) is not isotrivial, then \(V_\C\) is irreducible.
@@ -236,9 +238,9 @@ symplectic varieties, a condition stronger than primitive symplectic but weaker 
 hyper-K\"ahler.
 
 Thus the problem of understanding families of K-trivial varieties boils down to 
-understanding families of complex tori, hyper-K\"ahlers, and ICYs. The former is 
-largely classical, while the latter is also somewhat well-studied, largely due to work 
-of Friedman--Laza. In contrast, the deformation spaces of hyper-K\"ahler manifolds 
+understanding families of complex tori, hyper-K\"ahlers, and irreducible Calabi--Yaus. 
+The former is largely classical, while the latter is also somewhat well-studied, largely 
+due to work of Friedman--Laza. In contrast, the deformation spaces of hyper-K\"ahler manifolds 
 are not as well understood.
 
 Given a polarized hyper-K\"ahler manifold \((X, H)\), one can construct its deformation 
@@ -249,11 +251,11 @@ q(\sigma, \ol\sigma) > 0\}.\]
 Then the deformation space of \(X\) is constructed as an open subset 
 \begin{equation*}
     \mathcal{X} \subseteq \leftQ{\mathcal{D}_H}{\Gamma} = 
-    \leftQ{\frac{SO(2, b_2-3)}{SO(2) \times SO(b_2-3)}}{\Gamma},
+    \leftQ{\rightQ{SO(2, b_2-3)}{SO(2) \times SO(b_2-3)}}{\Gamma},
 \end{equation*}
 where \(b_2 = \dim H^2(X, \C)\).
 
-As such, to construct a deformation space of hyper-K\"ahler manifold, it suffices 
+As such, to construct a deformation space of hyper-K\"ahler manifolds, it suffices 
 to exhibit one member. There are currently four known deformation types: the infinite 
 families \(K3^{[n]}\) and \(\mathrm{Kum}_n\), occurring in every even dimension \(2n\),
 and the two sporadic types \(OG6\) and \(OG10\), occurring in dimensions 6 and 10 
@@ -281,21 +283,24 @@ Incidentally, it turns out that they carry many constraints.
         \item \cite{matsushita16} \(B\) is \(\Q\)-Fano, \(\Q\)-factorial, and klt with 
         Picard rank 1. There is an isomorphism \(\IH^*(B, \Q) \simeq H^*(\bbP^n, \Q)\).
         \item \cite{hwang08} If \(B\) is smooth, then \(B \simeq \bbP^n\).
-        \item \cite{bakker25} If \(f\) is not isotrivial, then it varies maximally, i.e. 
+        \item \cite{bakker25} If \(f\) is not isotrivial, then it varies maximally, i.e., 
         the period map \(\cP: B^\circ \to \cA_{n}\) has an \(n\)-dimensional image.
     \end{enumerate}
 \end{theorem}
 
-My results \Cref{fiber-structure}, \Cref{general-mt} aim to strengthen (2). Furthermore, 
-as we will see in \S 3, this may yet have consequences for (3). The base \(B\) is a 
-common area of study in this field, due to the following conjecture of Matsushita, 
-partially resolved due by Hwang in (4).
+My results \Cref{fiber-structure} and \Cref{general-mt} strengthen (5) by understanding 
+where \(\mathcal P\) lands inside of \(\mathcal{A}_g\). This consequently strengthens 
+(2), by deducing the structure of the very general smooth fiber. The base \(B\) is a 
+common area of study in this field, due to the following conjecture of Matsushita.
 
 \begin{conjecture}[Matsushita]
     Let \(X\) be a hyper-K\"ahler manifold, \(f: X \to B\) a Lagrangian fibration. 
     Then \(B \simeq \bbP^n\).
 \end{conjecture}
 
+This conjecture was partially resolved due by Hwang in (4). I hope 
+to attack it in some further cases by resolving 
+\Cref{question-deformation-class}.
 
 
 \section{Future directions}
@@ -304,23 +309,25 @@ partially resolved due by Hwang in (4).
 Let \(f: X \to B\) be a Lagrangian fibration, and suppose the Mumford--Tate 
 group of the very general fiber \(X_b\) is of the form 
 \begin{equation} \label{eq-mt-factors}
-    \mathbf{MT}(X_b) \sim (\Sp_{2h})^k, \quad k \neq 1.
+    \mathbf{MT}(X_b) \sim \mathbb{G}_m \cdot (\Sp_{2h})^k, \quad k \neq 1.
 \end{equation}
 It is not hard to see that such a Lagrangian fibration exists. For example, we can take 
 \(g: S \to \bbP^1\) to be an elliptically fibered K3 surface; the Hilbert scheme of points 
 \(X := S^{[n]}\) is hyper-K\"ahler, and when \(g\) is not isotrivial, \(X\) admits 
 a Lagrangian fibration 
-\[f = g^{[n]}: X \to \bbP^n, \quad \mathbf{MT}(X_b) \sim (\SL_2)^n.\]
+\[f = g^{[n]}: X \to \bbP^n, \quad \mathbf{MT}(X_b) \sim 
+\mathbb{G}_m \cdot (\SL_2)^n.\]
 
 More generally, if we allow \(X\) to be primitive symplectic, it is easy to see that 
 we can attain every positive integer pair \((h, k)\) in \eqref{eq-mt-factors}: 
 by \Cref{general-mt}, we can find a Lagrangian fibration \(g: Y \to \bbP^h\) with 
-\(\mathbf{MT}(Y_b) \sim \Sp_{2h}\), and taking the \(k\)-th symmetric power of 
-this morphism produces 
+\(\mathbf{MT}(Y_b) \sim \mathbb{G}_m \cdot \Sp_{2h}\), and taking the \(k\)-th symmetric 
+power of this morphism produces 
 \begin{equation*}
     X = Y^{(k)} \xrightarrow{g^{(k)}} (\bbP^h)^{(k)},
 \end{equation*}
-a Lagrangian fibration realizing the Mumford--Tate group \((\Sp_{2h})^k\).
+a Lagrangian fibration realizing the Mumford--Tate group 
+\(\mathbb{G}_m \cdot (\Sp_{2h})^k\).
 
 However, notice that the base \((\bbP^h)^{(k)}\) is easily distinguished from 
 projective space when \(h \neq 1\). This ensures that the argument above does not 
@@ -331,84 +338,83 @@ fibration \(f: X \to B\).
 \begin{question} \label{question-classification}
     Does there exist a hyper-K\"ahler manifold (or even an irreducible holomorphic 
     symplectic variety) \(X\) admitting a Lagrangian fibration \(f: X \to B\) 
-    such that \(\mathbf{MT}(X_b) \sim (\Sp_{2h})^k\) for some \(h \neq 1, n\)?
+    such that \(\mathbf{MT}(X_b) \sim \mathbb{G}_m \cdot (\Sp_{2h})^k\) for some 
+    \(h \neq 1, n\)?
 \end{question}
 
-I expect the answer to be negative. To motivate this somewhat, let 
-\(V = R^1 f_* \Z_{X^\circ}\) be the local system underlying \(f\).
-I claim there exists a ramified cover \(\pi: B' \to B\) which resolves the finite irreducible 
-part of the monodromy, as referenced in \Cref{remark-monodromy}. To be more precise, 
-\(\pi^* V_\Q = U_1 \oplus \cdots \oplus U_k\), and the monodromy action on 
-each \(U_i\) factors through the standard representation of \(\Sp_{2h, \Q}\).
+I expect a negative answer to this question. This would imply that if \(X_b\) is not 
+Hodge-generic, the variation of Hodge structures underlying \(f\) can be understood 
+in terms of variations of elliptic curves. 
 
-Now, using some methods from \cite{bakker-schnell23}, we can extend the isomorphism 
-\(\cT_{B^\circ} \xrightarrow{\sim} F^1 \cV\) to the whole tangent bundle 
-\(\cT_{B^\mathrm{sm}}\). By a local computation, we can pull this isomorphism back 
-to get a splitting of the tangent bundle of \(B'\):
-\begin{equation*}
-    \cT_{{B'}^\mathrm{sm}} \simeq F^1 \ol{\mathcal{U}}_1 \oplus \cdots 
-    \oplus F^1 \ol{\mathcal{U}}_k.
-\end{equation*}
-
-Another result of \cite{bakker-schnell23} shows that each \(F^1 \ol{\mathcal{U}}_i\) is closed 
-under the Lie bracket, thus giving a foliation of \(B'\). By some more Hodge theory, 
-we can actually show that the general leaf of this foliation is algebraic. 
-Altogether, we can show that this produces the following diagram:
+It is easy to exhibit such a Lagrangian fibration: as above, 
+let \(\varphi: S \to \mathbb{P}^1\) be an elliptically fibered K3 surface, 
+and consider the map induced on the Hilbert scheme of \(g\) points:
+\(\varphi^{[g]}: S^{[g]} \to (\mathbb{P}^1)^{[g]} \simeq \mathbb{P}^g\).
+The fibers of \(\varphi^{[g]}\) are isogenous to \(E_1 \times \cdots \times E_g\)
+a product of elliptic curves, as needed. We also have a cover 
+\(\pi: (\mathbb{P}^1)^g \to \mathbb{P}^g\) satisfying the following diagram:
 \begin{equation*}
 \begin{tikzcd}
-X' \arrow{d}{f'} & X \arrow{d}{f} \\
-B' \arrow{r}{\pi} \arrow[d, dashed, "\varphi^k"] & B \arrow[d, dashed, "\varphi^{(k)}"] \\
-Z^k \arrow{r}{\ol{\pi}} & Z^{(k)}
+\underbrace{S \times \cdots \times S}_g \arrow[r, dashed] \arrow{d}{\varphi^g} & X \arrow{d}{\varphi^{[g]}} \\
+\underbrace{\mathbb{P}^1 \times \cdots \times \mathbb{P}^1}_g \arrow{r}{\pi} & \mathbb{P}^g
 \end{tikzcd}
 \end{equation*}
 
-Now we can try to answer \Cref{question-classification} by answering the following 
-question: 
-\begin{question}
-    Does the map \(\varphi^{(k)}: B \dashrightarrow Z^{(k)}\) extend to a morphism?
-\end{question}
-If indeed it does, then we must have an inclusion on the level of intersection 
-cohomology:
-\begin{equation*}
-    \IH^*(Z^{(k)}, \Q) = \mathrm{Sym}^k(\IH(Z, \Q)) \subseteq 
-    \IH^*(B, \Q) = H^*(\bbP^n, \Q).
-\end{equation*}
+But one can imagine such a diagram existing more generally. Thus, one can ask if 
+the following partial converse holds:
 
-But \(H^*(\bbP^n, \Q)\) is minimal among \(n\)-dimensional K\"ahler manifolds, so 
-we must have equality everywhere. This is impossible unless \(\dim Z = 1\), 
-so that \(\IH^*(Z, \Q) = H^*(\bbP^1, \Q)\), which forces \(Z \simeq \bbP^1\). 
-This immediately gives \(h = 1\) and \(k = n\), thereby providing a negative answer to
-\Cref{question-classification}.
-
-Another related question worth pursuing may also be seen in this diagram:
-\begin{question} \label{question-birational-arrow}
-    Is the map \(\varphi^{(k)}: B \dashrightarrow Z^{(k)}\) birational?
-\end{question}
-Suppose it were. By a theorem of Sacc\`a \cite{sacca25}, we can compactify the map 
-\(\varphi^{(k)} \circ f: X \dashrightarrow Z^{(k)}\) to a morphism 
-\(g: Y \to Z^{(k)}\), where \(Y\) is a smooth hyper-K\"ahler manifold birational 
-to \(X\), and \(g: Y \to Z^{(k)}\) is a Lagrangian fibration agreeing with 
-\(\varphi^{(k)} \circ f\) away from the indeterminacy locus.
-
-Now by a similar intersection cohomology argument, we have
-\(\IH^*(Z, \Q) = \IH^*(\bbP^1, \Q)\), forcing \(h = 1\) and \(k = n\), providing an 
-negative answer to \Cref{question-classification}. However, in this setting, we 
-may be able to learn more about \(X\). Over \(\bbP^1\), we may be able to take 
-the variation of Hodge structures \(\mathcal{U}_i\) and produce a K3 surface 
-\(S \to \bbP^1\) realizing the VHS. If so, we can show that \(Y \simeq S^{[n]}\), 
-providing an affirmative answer to the following question:
 \begin{question} \label{question-deformation-class}
     Let \(X\) be a hyper-K\"ahler manifold, \(f: X \to B\) a Lagrangian fibration. 
-    Suppose \(\mathbf{MT}(X_b) \sim (\Sp_{2h})^k\), for \(h < n\). Does \(X\) belong 
-    to the deformation type of \(K3^{[n]}\)?
+    Suppose \(\mathbf{MT}(X_b) \sim \mathbb{G}_m \cdot (\Sp_{2h})^k\), for \(h < n\). 
+    Does \(X\) belong to the deformation type \(K3^{[n]}\)?
 \end{question}
 
-It is possible that \Cref{question-birational-arrow} has a negative answer. In this case, 
-it may still be possible to attack \Cref{question-deformation-class} in other ways. 
-For instance, we may be able to show that the tangent bundle \(\cT_X\) splits 
-in the same way the local system does. We can try to integrate the resulting distributions, 
-which could give us a handle on how to construct \(X\) using lower-dimensional 
-hyper-K\"ahler manifolds.
+
+
+\subsection{Understanding the period image of related weight one variations}
+
+My results tend to assume that \(X\) is hyper-K\"ahler (or primitive symplectic) 
+because we desire some irreducibility results, the most crucial of which is Bakker's 
+\cite{bakker25}: \(f\) is either isotrivial or varies maximally. However, there are 
+many ways I hope to generalize my results to less restrictive settings. 
+
+\begin{question}
+    Let \(M\) be a symplectic manifold (not necessarily compact), and let \(f: M \to B\)
+    be a Lagrangian fibration. Suppose that \(f\) varies maximally; show that
+    \begin{equation*}
+        \mathbf{MT}(M_b) \sim \mathbb{G}_m \cdot 
+        \left(\Sp_{2h_1} \times \cdots \times \Sp_{2h_k}\right),
+    \end{equation*}
+    for some collection of integers \(h_i\) each dividing \(\dim B\).
+\end{question}
+
+I believe the methods used in my prior papers should be able to accomplish this, 
+up to potentially needing to strengthen the conditions on \(f\) a bit further. 
+At present, I do not see how to avoid the assumption that \(f\) varies maximally 
+in this generality. On the other hand, there are some special cases where this 
+assumption seems unnecessary. 
+
+Recall that for \(C\) a smooth projective curve, the moduli space of polystable Higgs 
+bundles \(\mathcal{M}_\mathrm{Dol}(C, r)\) admits a natural Lagrangian fibration 
+\(h: \mathcal{M}_\mathrm{Dol}(C, r) \to \mathbb{A}\), called the Hitchin fibration.
+Because the fibration is constant with respect to the scaling action 
+\((E, \theta) \mapsto (E, \lambda \theta)\), the Hitchin fibration has no hope of 
+varying maximally. However, I can extend the results of \cite{varvak25} to 
+\(h\), to show that \(R^1 h_* \C|_{\mathbb{A}^\circ}\) is an irreducible 
+\(\C\)-local system. 
+
+\begin{question}
+    Let \(F\) be a very general fiber of the Hitchin fibration \(h\). 
+    Do we have \(\mathbf{MT}(F) \sim \mathbb{G}_m \cdot (\Sp_{2h})^k\)? 
+    Do we have \(\mathbf{MT}(F) \sim \mathrm{GSp}_{2g}\)?
+\end{question}
+
+This may not even need a very technical argument; since \(F\) is known to be 
+the Jacobian of a spectral curve, we may be able to apply some classical 
+vanishing cycle results to this setting.
+
+
+
 
 
 
@@ -423,10 +429,10 @@ theorem remains open for hyper-K\"ahler manifolds.
     Then there exists a uniruled divisor \(D \in |L|\).
 \end{conjecture}
 
-Currently, this conjecture is only known in full for the deformation types \(K3^{[n]}\) 
+As of now, this conjecture is only known in full for the deformation types \(K3^{[n]}\) 
 and \(\mathrm{Kum}_n\). Currently, I do not even have an idea on how to attack it 
 in full generality, but \Cref{general-mt} may be useful in one aspect of this conjecture: 
-producing an abundence of rational curves. 
+producing an abundance of rational curves. 
 
 If we start with \(X\) a general hyper-K\"ahler admitting a Lagrangian fibration 
 \(f: X \to B\) as in the assumptions of \Cref{general-mt}, the image of the 
@@ -454,15 +460,16 @@ this reduces to the following question:
 \end{question}
 
 Finally, if we truly hope to attack \Cref{conjecture-BM}, we would want to break 
-a divisor \(D \in |L|\) into the union \(D \sim D^\mathrm{vert} + D^\mathrm{base}\), 
+a divisor \(D \in |L|\) into the sum \(D \sim D^\mathrm{vert} + D^\mathrm{base}\), 
 where \(D^\mathrm{vert}\) is a uniruled divisor which is vertical with respect to the Lagrangian 
 fibration, and \(D^\mathrm{base}\) is a uniruled divisor which is pulled back from 
-the base. One possible approach may be to deform away from a Lagrangian fibration 
-\(f: X \to B\) which admits a rational section \(s: B \dashrightarrow X\).
+the base. 
+% One possible approach may be to deform away from a Lagrangian fibration 
+% \(f: X \to B\) which admits a rational section \(s: B \dashrightarrow X\).
 
 \begin{question}
     Can we find a special uniruled decomposition 
-    \(D \sim D^\mathrm{vert} + D^\mathrm{base}\) which deforms to a unirational divisor 
+    \(D \sim D^\mathrm{vert} + D^\mathrm{base}\) which deforms to a uniruled divisor 
     under general deformations?
 \end{question}
 
