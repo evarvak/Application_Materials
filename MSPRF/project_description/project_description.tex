@@ -1,0 +1,410 @@
+% NSF MSPRF Project Description (NSF 23-603) -- DRAFT
+%
+% Limit: 5 pages. Required content: introduction/background; past accomplishments;
+% research objectives, methods, and significance; how the fellowship enhances career
+% development; justification of sponsoring scientist and host; and a separate section
+% labeled "Broader Impacts". Write for both specialists and non-specialists.
+%
+% PAPPG formatting: Computer Modern at >= 11pt, margins >= 1in, no URLs in the
+% Project Description. References Cited is uploaded as a separate document (no page
+% limit); it is compiled after a \clearpage here only for convenience.
+%
+% Comments marked NOTE flag passages that were rephrased from research_statement.tex
+% to avoid the issues discussed earlier; TODO marks missing information.
+
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage[compact]{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink, capitalize]{cleveref}
+
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.2ex plus .4ex minus .2ex}{0.5ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{0.9ex plus .3ex minus .2ex}{0.4ex plus .2ex}
+\setlist{nosep, leftmargin=*}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Gm}{\mathbb{G}_m}
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\MT}{\mathbf{MT}}
+\newcommand{\Sp}{\mathrm{Sp}}
+\newcommand{\GSp}{\mathrm{GSp}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\IH}{\mathrm{IH}}
+\newcommand{\Kum}{\mathrm{Kum}}
+
+\newtheoremstyle{compact}{3pt}{3pt}{\itshape}{}{\bfseries}{.}{.5em}{}
+\theoremstyle{compact}
+\newtheorem{theorem}{Theorem}
+\renewcommand{\thetheorem}{\Alph{theorem}}
+\newtheorem{question}{Question}
+\newtheorem*{conjecture*}{Conjecture}
+
+% TODO: working title; final choice pending.
+\newcommand{\projecttitle}{Hodge Theory and Monodromy of Lagrangian Fibrations}
+
+\begin{document}
+
+\begin{center}
+  {\large\bfseries \projecttitle}\\[2pt]
+  Edward Varvak \quad\textbullet\quad Sponsoring scientist: Davesh Maulik,
+  Massachusetts Institute of Technology
+\end{center}
+
+%==========================================================================================
+\section{Introduction and background}
+%==========================================================================================
+
+Compact K\"ahler manifolds with trivial canonical bundle, the higher-dimensional
+analogues of elliptic curves and K3 surfaces, are central objects in algebraic geometry
+and mathematical physics. By the Beauville--Bogomolov decomposition theorem
+\cite{beauville83,bogomolov74}, every such manifold is, up to a finite \'etale cover, a
+product of complex tori, Calabi--Yau manifolds, and \emph{hyper-K\"ahler manifolds}:
+simply connected compact K\"ahler manifolds $X$ whose holomorphic $2$-forms are spanned by
+a single symplectic form~$\sigma$. The decomposition extends to varieties with mild (klt)
+singularities \cite{bgl22}, with hyper-K\"ahler manifolds replaced by their singular
+analogues, irreducible symplectic varieties.
+
+% NOTE: reframed relative to research_statement.tex (HK vs. CY deformation spaces).
+Hyper-K\"ahler manifolds are governed by Hodge theory to a remarkable degree: by the global
+Torelli theorem \cite{verbitsky13}, a deformation class is described by an explicit
+arithmetic quotient of a period domain, so a single example determines the whole class.
+The fundamental open problem is instead to determine which deformation classes
+exist. In each dimension $2n$ only two families are known, $K3^{[n]}$ and $\Kum_n$, along
+with two sporadic examples, $OG6$ and $OG10$, in dimensions $6$ and $10$. A guiding
+conjecture is the following.
+
+\begin{conjecture*}[Hyper-K\"ahler SYZ]
+Every deformation class of hyper-K\"ahler manifolds contains a member $X$ admitting a
+\emph{Lagrangian fibration}: a surjective morphism $f\colon X\to B$ with connected fibers
+of dimension $n=\frac12\dim X$ on which $\sigma$ vanishes.
+\end{conjecture*}
+
+Assuming this conjecture, Engel--Filipazzi--Greer--Mauri--Svaldi \cite{engel25} showed
+that there are only finitely many deformation classes in each dimension, so Lagrangian
+fibrations are the natural gateway to classification. They are also highly constrained:
+if $f: X\to B$ is a Lagrangian fibration of a hyper-K\"ahler manifold of dimension
+$2n$, then its smooth fibers are $n$-dimensional abelian varieties \cite{matsushita99};
+the base $B$ is a $\Q$-factorial klt Fano variety of Picard rank one with the intersection
+cohomology of $\bbP^n$ \cite{matsushita99,shen-yin22}, and $B\cong\bbP^n$ whenever $B$ is
+smooth \cite{hwang08,greb-lehn14,bakker-schnell23} (Matsushita conjectured that
+$B\cong\bbP^n$ always); and $f$ is either isotrivial or of \emph{maximal variation}
+\cite{bakker25}, meaning that the period map $\cP\colon B^\circ\to\cA_n$, which sends a
+point of the smooth locus $B^\circ\subset B$ to the isomorphism class of the fiber $X_b$ in
+the moduli space $\cA_n$ of polarized abelian varieties, has $n$-dimensional image.
+
+The goal of this proposal is to determine where the period map lands (which
+abelian varieties, and which families of them, occur as fibers of Lagrangian
+fibrations) and to use this Hodge-theoretic information to attack structural questions:
+the classification of Lagrangian fibrations whose fibers decompose (Objective~1), the
+extension of the theory to non-compact settings such as Hitchin systems (Objective~2), and
+the construction of rational curves and uniruled divisors on hyper-K\"ahler manifolds
+(Objective~3).
+
+%==========================================================================================
+\section{Past results}
+%==========================================================================================
+
+My thesis work, supervised by Benjamin Bakker, develops the Hodge theory of Lagrangian
+fibrations. Let $X$ be a \emph{primitive symplectic variety} of dimension $2n$: a compact
+symplectic variety with $H^1(X,\cO_X)=0$ and a unique symplectic form up to scaling, such as
+a hyper-K\"ahler manifold. Let $f: X\to B$ be a Lagrangian fibration, whose smooth
+fibers are abelian varieties \cite{schwald20}. Let $f^\circ: X^\circ\to B^\circ$ be the
+smooth part of $f$ and $V=R^1f^\circ_*\Z$ the associated variation of Hodge structures,
+viewed as a representation of $\pi_1(B^\circ)$.
+
+\begin{theorem}[\cite{varvak25}]\label{thm:monodromy}
+If $f$ is not isotrivial, then $V_\C$ is irreducible. If $f$ is isotrivial, then the smooth
+fibers are isogenous to $E^n$ for an elliptic curve $E$ (first proven in
+\cite{kim-laza-martin24}), and $V_K=U_1\oplus U_2$ splits into two geometrically irreducible
+summands, where $K$ is the endomorphism field of $E$.
+\end{theorem}
+
+% NOTE: "over Q" added.
+\begin{theorem}[\cite{varvak26}]\label{thm:mt}
+If $f$ is not isotrivial, then for very general $b\in B$ the Mumford--Tate group of $X_b$ is
+isogenous over $\Q$ to $\Gm\cdot(\Sp_{2h})^{n/h}$ for some $h\mid n$. Equivalently, $X_b$ is
+isogenous to a product $A_1\times\cdots\times A_{n/h}$ of pairwise non-isogenous
+$h$-dimensional abelian varieties, each \emph{Hodge-generic}, i.e.\ carrying no Hodge
+classes beyond those forced by its polarization.
+\end{theorem}
+
+\begin{theorem}[\cite{varvak26}]\label{thm:general}
+Let $\mathcal{X}$ be a deformation class of hyper-K\"ahler manifolds with $b_2\ge7$ which
+contains a Lagrangian fibration. If $X\in\mathcal{X}$ is general among members admitting a
+Lagrangian fibration $f\colon X\to B$, then the very general fiber of $f$ is Hodge-generic:
+$\MT(X_b)=\GSp_{2n}$.
+\end{theorem}
+
+These results sharpen Bakker's theorem: the period image is not only $n$-dimensional but
+Hodge-generic either in $\cA_n$ or in a product locus $\cA_h^{n/h}$, and in the general case
+it is the former. The proof of \Cref{thm:mt} hinges on the interplay between the connected
+monodromy group, which preserves each factor $A_i$, and the finite part of the monodromy,
+which by \Cref{thm:monodromy} must permute the factors transitively. The hypothesis
+$b_2\ge7$ holds for every known deformation type.
+
+\subsection*{Personal accomplishments}
+
+I've been invited to speak about my research at the Insitute for Advanced Study's 
+Research Seminar (November 2025), GTA Philadelphia (May 2026), and the upcoming 
+Special Session on Higgs Bundles at JMM 2027. I've recieved the Kuga-Sah Award for 
+Excellence in Mathematics from the Stony Brook University Department of Mathematics (2022). 
+I have recieved the UIC RTG grant for six semesters throughout my time at UIC. 
+I received the Bernard Kurtin Award for research in mathematics from the UIC Department of 
+Mathematics, Statistics, and Computer Science (2025). 
+
+%==========================================================================================
+\section{Research objectives, methods, and significance}
+%==========================================================================================
+
+\subsection{Objective 1: Which decompositions of the Mumford--Tate group occur?}
+
+\Cref{thm:mt} leaves open which values of $h$ actually occur. If $S\to\bbP^1$ is a
+non-isotrivial elliptic K3 surface, the induced map $S^{[n]}\to(\bbP^1)^{(n)}\cong\bbP^n$ is
+a Lagrangian fibration whose fibers are isogenous to products of $n$ elliptic curves, so
+$h=1$. If singularities are allowed, every $h$ occurs: given a Lagrangian fibration
+$Y\to\bbP^h$ with Hodge-generic fibers (\Cref{thm:general}), the symmetric power
+$Y^{(k)}\to(\bbP^h)^{(k)}$ is a Lagrangian fibration of a primitive symplectic variety with
+$\MT(X_b)\sim\Gm\cdot(\Sp_{2h})^k$. For $h\ge2$, however, the base $(\bbP^h)^{(k)}$ does not
+have the intersection cohomology of projective space (e.g.\
+$\dim\IH^4((\bbP^2)^{(2)})=2$), so it cannot be the base of a Lagrangian fibration of a
+hyper-K\"ahler manifold.
+
+\begin{question}\label{q:classification}
+Is there a hyper-K\"ahler manifold (or irreducible symplectic variety) with a Lagrangian
+fibration such that $\MT(X_b)\sim\Gm\cdot(\Sp_{2h})^{n/h}$ with $1<h<n$?
+\end{question}
+
+\begin{question}\label{q:k3n}
+If $X$ is hyper-K\"ahler and the very general fiber is not Hodge-generic, i.e.\ $h<n$, is
+$X$ of $K3^{[n]}$-type?
+\end{question}
+
+I expect a negative answer to \Cref{q:classification}: whenever the fibers are not
+Hodge-generic, the fibration should be governed by families of elliptic curves, as it is
+for $S^{[n]}$.
+
+
+% TODO: cite the result that Matsushita's conjecture holds for K3^[n]-type.
+A complete answer would show that decomposable Lagrangian fibrations
+are exactly those built from elliptic fibrations and give a Hodge-theoretic characterization
+of the $K3^{[n]}$ deformation type. Furthermore, since the base of a Lagrangian fibration of
+$K3^{[n]}$-type is known to be $\bbP^n$, a complete answer would prove Matsushita's 
+conjecture for every Lagrangian fibration whose fibers are not Hodge-generic.
+
+
+% NOTE: this approach paragraph was added in the draft; check it against your intended
+% strategy.
+\emph{Approach.} Suppose $h<n$, set $k=n/h$, and pass to the finite \'etale cover
+$B'\to B^\circ$ over which $V$ splits as $V_1\oplus\cdots\oplus V_k$. The symplectic form
+identifies $T_bB$ with $H^{1,0}(X_b)$, and by Donagi--Markman \cite{donagi-markman96} the
+differential of the period map is a symmetric cubic form on $T_bB$. Because the period map
+respects the splitting, this cubic form is a sum of cubic forms on the summands
+$E_i\subset T_bB$ corresponding to the $H^{1,0}(V_{i,b})$. Consequently each partial period
+map $\cP_i\colon B'\to\cA_h$ depends only on the $E_i$-directions, the $E_i$ integrate to
+algebraic foliations, and $(\cP_1,\dots,\cP_k)$ maps $B'$ dominantly and generically finitely
+onto a product $Z_1\times\cdots\times Z_k$ of $h$-dimensional varieties. This is exactly the
+structure of $(\bbP^1)^n\to\bbP^n$ in the example above. I plan to extend this structure
+across the discriminant locus and combine it with the constraints on $B$ (Fano, Picard rank
+one, $\IH^*(B)\cong H^*(\bbP^n)$) and an analysis of the branching of $B'\to B$ to rule out
+$1<h<n$. When $h=1$, I will use the factors to construct an elliptic K3 surface $S$ and
+compare $X$ with a moduli space of sheaves on $S$, identifying its deformation type. Recent
+work of Sacc\`a on compactifications of Lagrangian fibrations \cite{sacca25} will be an important
+input.
+
+
+\subsection{Objective 2: Lagrangian fibrations beyond the compact case}
+
+Many important Lagrangian fibrations are not compact: integrable systems from mathematical
+physics, local models near singular fibers, and above all the Hitchin fibration
+$h\colon\cM_{\mathrm{Dol}}\to\bbA$ on the moduli space of Higgs bundles on a curve $C$
+\cite{hitchin87}, which is central to non-abelian Hodge theory and the geometric Langlands
+program. My compact methods use Bakker's dichotomy, which fails here: $h$ is equivariant for
+the scaling action $(E,\theta)\mapsto(E,\lambda\theta)$, so its period map is constant along
+$\C^*$-orbits and never has maximal variation.
+
+% NOTE: divisibility condition on the h_i removed.
+\begin{question}\label{q:noncompact}
+Let $f\colon M\to B$ be a proper Lagrangian fibration of a (not necessarily compact)
+holomorphic symplectic manifold, of maximal variation. Is the Mumford--Tate group of its
+very general fiber isogenous to $\Gm\cdot(\Sp_{2h_1}\times\cdots\times\Sp_{2h_k})$ with
+$h_1+\cdots+h_k=n$?
+\end{question}
+
+% NOTE: stated for SL_r (for GL_r, R^1h_* has a constant summand H^1(C)).
+I expect the foliation and monodromy techniques above to extend to this setting, possibly
+under mild hypotheses on the singular fibers. For the Hitchin fibration of
+$\SL_r$-Higgs bundles, whose regular fibers are Prym varieties of spectral covers
+$\Sigma_a\to C$, I can adapt the methods of \cite{varvak25} to show that $R^1h_*\C$ is
+irreducible over the regular locus $\bbA^\circ$, despite the failure of maximal variation.
+
+\begin{question}\label{q:hitchin}
+Is the very general $\SL_r$-Hitchin fiber Hodge-generic? If not, which products of
+symplectic groups occur as its Mumford--Tate group?
+\end{question}
+
+Mumford--Tate groups govern the Hodge classes, and conjecturally the
+algebraic cycles, on the fibers. This complements recent work of Maulik--Shen--Yin on
+algebraic cycles and Fourier transforms for Hitchin systems \cite{msy-cycles,msy-fourier},
+and gives a new Hodge-theoretic invariant of a fundamental integrable system.
+
+\emph{Approach.} Spectral curves form an open subset of a linear system on the
+compactified cotangent bundle $\bbP(K_C\oplus\cO_C)$, so Lefschetz theory is available: the
+monodromy is generated by Picard--Lefschetz transformations in vanishing cycles, and
+Zariski density results $\cite[\mathrm{Lemma\ 4.4.2}^a]{deligne74}$ apply. Since the connected monodromy group is a
+normal subgroup of the derived Mumford--Tate group \cite{andre92}, showing that the
+monodromy on the Prym part is Zariski-dense in $\Sp_{2d}$, $d=\dim\bbA$, would prove
+Hodge-genericity. The difficulties
+are that the Hitchin base is only part of a linear system and that the relevant vanishing
+cohomology is that of the Prym; here we will try to apply the work of Maulik and his 
+collaborators on the topology of Hitchin fibrations \cite{dCMS22,maulik-shen24}.
+
+
+\subsection{Objective 3: Rational curves and the Bogomolov--Mumford conjecture}
+
+By a theorem of Bogomolov and Mumford \cite{mori-mukai83}, every ample linear system on a K3
+surface contains a divisor supported on rational curves. The analogue for hyper-K\"ahler
+manifolds is closely tied to the study of algebraic cycles on hyper-K\"ahler varieties
+\cite{cmp19}; it is known for the deformation types $K3^{[n]}$ and $\Kum_n$ but open in
+general.
+% TODO: check citations for the K3^[n] and Kum_n cases.
+
+\begin{conjecture*}[Hyper-K\"ahler Bogomolov--Mumford] \label{conj:HKBM}
+If $X$ is a projective hyper-K\"ahler manifold and $L$ is an ample line bundle on $X$, then
+$|L|$ contains a uniruled divisor.
+\end{conjecture*}
+
+% NOTE: Ax--Schanuel step rephrased via typical intersections; decomposition rephrased as
+% horizontal + vertical.
+\emph{Approach.} Let $X$ be general among Lagrangian-fibered members of its deformation
+class, so that by \Cref{thm:general} the period image $\cP(B^\circ)\subset\cA_n$ is
+$n$-dimensional and Hodge-generic. Abelian varieties isogenous to a product $E\times A'$
+form the Hecke translates of $\cA_1\times\cA_{n-1}$, which has codimension $n-1$, so their
+expected intersection with the period image is one-dimensional. Results on the existence
+and density of such typical intersections \cite{khelifa-urbanik23,eterovic-scanlon25},
+complementing the Ax--Schanuel theorem \cite{bakker-tsimerman19}, which controls the
+atypical ones, should produce a dense set of curves $C^\circ\subset B^\circ$ over which the fibers are isogenous to $E_t\times A'_t$.
+Over the boundary points of such a curve I expect the elliptic factor to degenerate to a
+nodal rational curve while $A'_t$ remains an abelian variety, producing uniruled
+subvarieties in the singular fibers of $f$. We need to show that these rational
+curves deform to a general polarized deformation of $X$, which no longer carries a
+Lagrangian fibration, using the deformation theory of rational curves on hyper-K\"ahler
+manifolds \cite{cmp19}. Then we hope to follow the K3 picture, where an ample class is 
+a combination $a\sigma+bF$ of a section and a fiber. We will try to decompose a divisor 
+in $|L|$ into uniruled horizontal and vertical parts that deform with $X$.
+
+
+% TODO: I'm not sure that this section should exist, given the absurd pace of advancement 
+% in math at present
+% \subsection{Timeline}
+% \emph{Year 1:} Objective~1(a) and \Cref{q:hitchin}. \emph{Year 2:} Objective~1(b) and
+% \Cref{q:noncompact}. \emph{Year 3:} Objective~3. Objective~1 builds directly on my thesis
+% and should produce results early; Objectives~2 and~3 carry more risk and benefit most from
+% the expertise available at MIT.
+
+%==========================================================================================
+\section{Career development and choice of sponsoring scientist and host institution}
+%==========================================================================================
+
+My goal is a faculty career at a research university, leading a research program on the
+Hodge theory of Lagrangian fibrations and its interactions with moduli theory, enumerative
+geometry, and non-abelian Hodge theory. My training so far is centered on Hodge theory and
+period maps. I have chosen the Research Fellowship option because full-time research
+support suits the long-term, higher-risk parts of this program (Objectives~2 and~3) and the
+substantial new background they require. The fellowship will allow me to:
+\begin{itemize}
+\item learn the sheaf-theoretic and enumerative tools that Objectives~1--3 require: 
+perverse filtrations, Fourier transforms on abelian fibrations, moduli of sheaves on K3 surfaces, 
+and Gromov--Witten theory; 
+\item establish my independence, pursuing the higher-risk Objectives~2 and~3, starting
+collaborations at MIT and in the Boston area, and traveling to conferences and research
+visits supported by the fellowship allowance;
+\item develop as a mentor and expositor through the activities described in \Cref{sec:bi}.
+\end{itemize}
+
+My sponsoring scientist, Davesh Maulik, is a leading expert on abelian fibrations, 
+hyper-K\"ahler varieties, and Hitchin systems, which serve as the backbone of this proposal. 
+His work bears directly on each objective. With Shen and Yin he developed the interaction of
+Fourier--Mukai transforms with perverse filtrations for abelian fibrations
+\cite{msy-fourier}, and with Shen, Yin, and Zhang he proved the D-equivalence conjecture for
+hyper-K\"ahler varieties of $K3^{[n]}$-type \cite{msyz24}. These tools, together with his
+expertise on moduli of sheaves on K3 surfaces, will help to recognize the
+hyper-K\"ahler manifolds in \Cref{q:k3n} as belonging to the deformation space 
+\(\mathrm{K3}^{[n]}\). 
+
+Professor Maulik is a central figure in the topology
+of Hitchin fibrations, including the proof of the $P=W$ conjecture
+\cite{dCMS22,maulik-shen24} and the study of algebraic cycles on Hitchin systems
+\cite{msy-cycles}. His insight will be invaluable to helping attack \Cref{q:hitchin}. 
+Furthermore, his work on Noether--Lefschetz theory, which relates
+Hodge loci in families of K3 surfaces to curve counting
+\cite{maulik-pandharipande13,kmps10}, and on curves on K3 surfaces \cite{mpt10} sits 
+at the interface of Hodge loci and rational curves that Objective~3 explores. 
+
+% TODO: other MIT/Boston colleagues may be named here later.
+MIT offers a large and active community in algebraic geometry and neighboring fields.
+Moving from Chicago, where I trained in Hodge theory with Bakker, to MIT, with its strengths
+in moduli theory, enumerative geometry, and geometric representation theory, is precisely
+the broadening my research program needs.
+
+%==========================================================================================
+\section{Broader Impacts}\label{sec:bi}
+%==========================================================================================
+
+% \emph{Mentoring young researchers.} At MIT I will mentor high school students through
+% PRIMES, which pairs Boston-area students with MIT graduate students and postdocs on research
+% projects, and undergraduates through UROP. Classical algebraic geometry offers research
+% problems that need little background and lend themselves to computer experimentation; my
+% undergraduate thesis, on recovering plane nodal curves from their bitangents, is an example.
+% Suitable projects include computing the monodromy action on the 28 bitangents of a varying
+% plane quartic and on the vanishing cycles of families of plane curves, and classifying the
+% singular fibers of explicit elliptic K3 surfaces, the $n=1$ case of the Lagrangian
+% fibrations studied here. Code and results from these projects will be made publicly
+% available.
+
+\emph{Exposition and open resources.} I have written expository notes on perverse sheaves and
+intersection cohomology and on Simpson's non-abelian Hodge correspondence, and I share these
+and my course materials publicly. During the fellowship I will expand them into a survey of
+the Hodge theory of Lagrangian fibrations aimed at graduate students---covering monodromy,
+Mumford--Tate groups, and period maps of abelian fibrations---so that students without a
+local expert can enter this rapidly developing area.
+
+\emph{Building research communities.} As a graduate student I co-organized the Graduate
+Algebraic Geometry Seminar for two semesters, organized a reading group on the Weil
+conjectures, and organized a seminar on Lie groups. At MIT I will organize a learning
+seminar on Lagrangian fibrations and Hitchin systems, open to graduate students and postdocs
+across the Boston area, and seek support, including from the fellowship allowance, for a
+small workshop for early-career researchers.
+
+\emph{Teaching and outreach.} I am currently teaching Calculus~II at the University of
+Chicago as a graduate student lecturer, after five semesters as a teaching assistant at UIC.
+I have also judged the QED competition of the Math Circles of Chicago; in Boston I will 
+continue this outreach by volunteering with local math circles and competitions such as 
+HMMT.
+
+\emph{Broader scientific impact.} Lagrangian fibrations and Hitchin systems are algebraic
+integrable systems that appear throughout mirror symmetry and mathematical physics; results
+on their monodromy and periods will be useful well beyond algebraic geometry.
+
+%==========================================================================================
+% References Cited: uploaded separately (no page limit).
+%==========================================================================================
+\clearpage
+% \renewcommand{\refname}{References Cited}
+\bibliographystyle{alphaurl}
+\bibliography{refs}
+
+\end{document}
