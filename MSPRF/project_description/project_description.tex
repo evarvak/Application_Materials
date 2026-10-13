@@ -55,7 +55,9 @@
 \newtheorem{theorem}{Theorem}
 \renewcommand{\thetheorem}{\Alph{theorem}}
 \newtheorem{question}{Question}
+\newtheorem*{theorem*}{Theorem}
 \newtheorem*{conjecture*}{Conjecture}
+\crefname{question}{Question}{Questions}
 
 % TODO: working title; final choice pending.
 \newcommand{\projecttitle}{The Hodge theory of Lagrangian fibrations, 
@@ -65,7 +67,7 @@ with applications to hyper-K\"ahler geometry}
 
 \begin{center}
   {\Large\bfseries \projecttitle}\\[5pt]
-  {\bf Applicant: }Edward Varvak, University of Chicago \\ 
+  {\bf Applicant: }Edward A. Varvak, University of Chicago \\ 
   {\bf Sponsoring scientist}: Davesh Maulik, Massachusetts Institute of Technology
 \end{center}
 
@@ -89,35 +91,42 @@ Torelli theorem \cite{verbitsky13}, a deformation class is described by an expli
 arithmetic quotient of a period domain, so a single example determines the whole class.
 The fundamental open problem is instead to determine which deformation classes
 exist. In each dimension $2n$ only two families are known, $K3^{[n]}$ and $\Kum_n$, along
-with two sporadic examples, $OG6$ and $OG10$, in dimensions $6$ and $10$. A guiding
-conjecture is the following.
+with two sporadic examples, $OG6$ and $OG10$, in dimensions $6$ and $10$. The guiding
+conjecture in this direction, the hyper-K\"ahler SYZ conjecture, was recently proven in a
+manuscript released by OpenAI \cite{openai-syz26}, and independently by Engel--Mauri
+\cite{engel-mauri26}.
 
-\begin{conjecture*}[Hyper-K\"ahler SYZ]
-Every deformation class of hyper-K\"ahler manifolds contains a member $X$ admitting a
-\emph{Lagrangian fibration}: a surjective morphism $f\colon X\to B$ with connected fibers
-of dimension $n=\frac12\dim X$ on which $\sigma$ vanishes.
-\end{conjecture*}
+\begin{theorem*}[Hyper-K\"ahler SYZ]
+Let $L$ be a nontrivial nef line bundle on a hyper-K\"ahler manifold $X$ which is isotropic
+for the Beauville--Bogomolov--Fujiki form $q_X$. Then $L$ is semiample, and a power of $L$
+defines a \emph{Lagrangian fibration}: a surjective morphism $f\colon X\to B$ with connected
+fibers of dimension $n=\frac12\dim X$ on which $\sigma$ vanishes.
+\end{theorem*}
 
-Assuming this conjecture, Engel--Filipazzi--Greer--Mauri--Svaldi \cite{engel25} showed
-that there are only finitely many deformation classes in each dimension, so Lagrangian
-fibrations are the natural gateway to classification. They are also highly constrained:
+When $b_2(X)\ge5$, as for all known examples, $q_X$ has isotropic integral classes, so every
+such deformation class contains a Lagrangian fibration. Combined with the boundedness results
+of Engel--Filipazzi--Greer--Mauri--Svaldi \cite{engel25}, it follows that there are only
+finitely many deformation classes with $b_2\ge5$ in each dimension
+\cite{openai-syz26,engel-mauri26}. Lagrangian fibrations are therefore the natural gateway to
+classification. They are also highly constrained:
 if $f: X\to B$ is a Lagrangian fibration of a hyper-K\"ahler manifold of dimension
 $2n$, then its smooth fibers are $n$-dimensional abelian varieties \cite{matsushita99};
 the base $B$ is a $\Q$-factorial klt Fano variety of Picard rank one with the intersection
 cohomology of $\bbP^n$ \cite{matsushita99,shen-yin22}, and $B\cong\bbP^n$ whenever $B$ is
-smooth \cite{hwang08,greb-lehn14,bakker-schnell23} (Matsushita conjectured that
-$B\cong\bbP^n$ always); and $f$ is either isotrivial or of \emph{maximal variation}
+smooth \cite{hwang08,greb-lehn14,bakker-schnell23} or, by a second recent OpenAI manuscript,
+whenever $X$ is projective \cite{openai-bases26}, proving a conjecture of Matsushita in the
+projective case; and $f$ is either isotrivial or of \emph{maximal variation}
 \cite{bakker25}, meaning that the period map $\cP\colon B^\circ\to\cA_n$, which sends a
 point of the smooth locus $B^\circ\subset B$ to the isomorphism class of the fiber $X_b$ in
 the moduli space $\cA_n$ of polarized abelian varieties, has $n$-dimensional image.
 
-The goal of this proposal is to determine where the period map lands (which
+The goal of this proposal is to determine where the period map lands, i.e. which
 abelian varieties, and which families of them, occur as fibers of Lagrangian
-fibrations) and to use this Hodge-theoretic information to attack structural questions:
-the classification of Lagrangian fibrations whose fibers decompose (Objective~1), the
-extension of the theory to non-compact settings such as Hitchin systems (Objective~2), and
-the construction of rational curves and uniruled divisors on hyper-K\"ahler manifolds
-(Objective~3).
+fibrations. We also hope to use this Hodge-theoretic information to attack structural questions:
+the classification of Lagrangian fibrations whose fibers decompose
+(\Cref{q:classification,q:k3n}), the extension of the theory to non-compact settings such as
+Hitchin systems (\Cref{q:noncompact,q:hitchin}), and the construction of rational curves and
+uniruled divisors on hyper-K\"ahler manifolds (\Cref{HKBM}).
 
 %==========================================================================================
 \section{Past results}
@@ -159,7 +168,8 @@ Hodge-generic either in $\cA_n$ or in a product locus $\cA_h^{n/h}$, and in the 
 it is the former. The proof of \Cref{thm:mt} hinges on the interplay between the connected
 monodromy group, which preserves each factor $A_i$, and the finite part of the monodromy,
 which by \Cref{thm:monodromy} must permute the factors transitively. The hypothesis
-$b_2\ge7$ holds for every known deformation type.
+$b_2\ge7$ holds for every known deformation type, and by the SYZ theorem every such
+deformation class contains a Lagrangian fibration.
 
 \subsection*{Personal accomplishments}
 
@@ -175,7 +185,7 @@ Mathematics, Statistics, and Computer Science (2025).
 \section{Research objectives, methods, and significance}
 %==========================================================================================
 
-We will break our research plan into three primary objectives, which we order by the 
+We will break our research plan into three primary objectives, which we order by the
 expected difficulty of the task in question.
 
 \subsection{Which decompositions of the Mumford--Tate group occur?}
@@ -206,12 +216,9 @@ Hodge-generic, the fibration should be governed by families of elliptic curves, 
 for $S^{[n]}$.
 
 
-% TODO: cite the result that Matsushita's conjecture holds for K3^[n]-type.
 A complete answer would show that decomposable Lagrangian fibrations
 are exactly those built from elliptic fibrations and give a Hodge-theoretic characterization
-of the $K3^{[n]}$ deformation type. Furthermore, since the base of a Lagrangian fibration of
-$K3^{[n]}$-type is known to be $\bbP^n$, a complete answer would prove Matsushita's 
-conjecture for every Lagrangian fibration whose fibers are not Hodge-generic.
+of the $K3^{[n]}$ deformation type.
 
 
 % NOTE: this approach paragraph was added in the draft; check it against your intended
@@ -227,8 +234,9 @@ algebraic foliations, and $(\cP_1,\dots,\cP_k)$ maps $B'$ dominantly and generic
 onto a product $Z_1\times\cdots\times Z_k$ of $h$-dimensional varieties. This is exactly the
 structure of $(\bbP^1)^n\to\bbP^n$ in the example above. I plan to extend this structure
 across the discriminant locus and combine it with the constraints on $B$ (Fano, Picard rank
-one, $\IH^*(B)\cong H^*(\bbP^n)$) and an analysis of the branching of $B'\to B$ to rule out
-$1<h<n$. When $h=1$, I will use the factors to construct an elliptic K3 surface $S$ and
+one, $\IH^*(B)\cong H^*(\bbP^n)$, and now $B\cong\bbP^n$ when $X$ is a projective
+hyper-K\"ahler manifold \cite{openai-bases26}) and an analysis of the branching of $B'\to B$
+to rule out $1<h<n$. When $h=1$, I will use the factors to construct an elliptic K3 surface $S$ and
 compare $X$ with a moduli space of sheaves on $S$, identifying its deformation type. Recent
 work of Sacc\`a on compactifications of Lagrangian fibrations \cite{sacca25} will be an important
 input.
@@ -277,8 +285,66 @@ normal subgroup of the derived Mumford--Tate group \cite{andre92}, showing that 
 monodromy on the Prym part is Zariski-dense in $\Sp_{2d}$, $d=\dim\bbA$, would prove
 Hodge-genericity. The difficulties
 are that the Hitchin base is only part of a linear system and that the relevant vanishing
-cohomology is that of the Prym; here we will try to apply the work of Maulik and his 
+cohomology is that of the Prym; here we will try to apply the work of Maulik and his
 collaborators on the topology of Hitchin fibrations \cite{dCMS22,maulik-shen24}.
+
+
+% Commented out: a fourth objective on abelian fibrations of Calabi--Yau varieties. To
+% restore it, also list it in the goals paragraph of Section 1, change "three" to "four" at
+% the start of Section 3, and mention Calabi--Yau fibrations in "Broader scientific impact".
+%
+% \subsection{Abelian fibrations of Calabi--Yau varieties}\label{sec:cy}
+%
+% Strict Calabi--Yau varieties $Y$ (simply connected, with $\omega_Y\cong\cO_Y$ and
+% $h^{p,0}(Y)=0$ for $0<p<\dim Y$), the other simply connected factors in the
+% Beauville--Bogomolov decomposition, often carry fibrations $f\colon Y\to B$ whose general
+% fibers are $g$-dimensional abelian varieties. Elliptic Calabi--Yau threefolds, which are
+% central to F-theory, and Calabi--Yau threefolds fibered in abelian surfaces
+% \cite{schoen88,gross-popescu01} are basic examples, and Calabi--Yau varieties of fixed
+% dimension with such fibrations are birationally bounded \cite{engel25}. Part of the
+% hyper-K\"ahler picture survives: there is a period map $\cP\colon B^\circ\to\cA_g$, and if
+% $f$ has maximal variation ($\cP$ generically finite), the canonical bundle formula
+% \cite{ambro05} shows that $B$ is of Fano type. But the symplectic form is gone: $\dim B$ is
+% no longer tied to $g$, the period map need not satisfy the Donagi--Markman cubic condition,
+% and the restriction map $H^2(Y,\Q)\to H^2(Y_b,\Q)$, which has rank one for Lagrangian
+% fibrations \cite{shen-yin22}, now has image $\mathrm{NS}(Y_\eta)_\Q$, where $Y_\eta$ is the
+% generic fiber, and this can be large. Accordingly, the naive analogue of \Cref{thm:mt} fails:
+% a small resolution of the self-fiber product $S\times_{\bbP^1}S$ of a non-isotrivial rational
+% elliptic surface $S\to\bbP^1$ is a strict Calabi--Yau threefold \cite{schoen88} fibered in
+% abelian surfaces $E_t\times E_t$, whose period image is not Hodge-generic in any product
+% locus.
+%
+% \begin{question}\label{q:cy}
+% Let $f\colon Y\to B$ be an abelian fibration of a strict Calabi--Yau variety with maximal
+% variation, and suppose that, as for Lagrangian fibrations, the restriction map
+% $H^2(Y,\Q)\to H^2(Y_b,\Q)$ has rank one. Is the image of the period map Hodge-generic in a
+% product locus of $\cA_g$? If not, which Mumford--Tate groups occur for the very general
+% fiber?
+% \end{question}
+%
+% The rank-one hypothesis holds, for instance, when $\rho(Y)=\rho(B)+1$, and it rules out the
+% example above. Even so, I expect a negative answer: it does not rule out fibers with real
+% multiplication or with isogenous factors permuted by the monodromy, and nothing replaces the
+% Donagi--Markman condition. An answer would show which features of
+% Theorems~\ref{thm:monodromy}--\ref{thm:general} come from K-triviality and which require the
+% symplectic form, and would constrain the fibers of abelian fibrations of Calabi--Yau
+% varieties.
+%
+% \emph{Approach.} The first test case is a Calabi--Yau threefold $f\colon Y\to\bbP^1$ fibered
+% in abelian surfaces. Its period image is a curve in $\cA_2$, and the smallest special
+% subvariety containing it is $\cA_2$, a product locus, a Hilbert modular surface, or a special
+% curve. Since $\omega_Y\cong\cO_Y$, we have $f_*\omega_{Y/\bbP^1}\cong\cO_{\bbP^1}(2)$, so if
+% the local monodromies are unipotent, the Hodge bundle has degree $2$; the Arakelov inequality
+% then forces at least four singular fibers, with equality only if the period image is a
+% Shimura curve \cite{viehweg-zuo04}. I will combine such degree constraints with the geometry
+% of curves on Hilbert modular surfaces to decide which cases occur, using the constructions of
+% \cite{schoen88,gross-popescu01} as test cases. In general, I will adapt the proofs of
+% \Cref{thm:monodromy,thm:mt} to $V=R^1f^\circ_*\Z$, with the rank-one hypothesis in place of
+% the symplectic form: it should again force the finite part of the monodromy to permute
+% transitively the isotypic summands of $V$ over a finite \'etale cover of $B^\circ$, reducing
+% the problem to the connected monodromy group of each summand, a normal subgroup of its derived
+% Mumford--Tate group \cite{andre92}. The new difficulty is that the summands may carry real or
+% complex multiplication, which must be ruled out or realized using the global geometry of $Y$.
 
 
 \subsection{Rational curves and the Bogomolov--Mumford conjecture}\label{HKBM}
@@ -298,7 +364,7 @@ $|L|$ contains a uniruled divisor.
 % NOTE: Ax--Schanuel step rephrased via typical intersections; decomposition rephrased as
 % horizontal + vertical.
 \emph{Approach.} Let $X$ be general among Lagrangian-fibered members of its deformation
-class, so that by \Cref{thm:general} the period image $\cP(B^\circ)\subset\cA_n$ is
+class, which exist by the SYZ theorem, so that by \Cref{thm:general} the period image $\cP(B^\circ)\subset\cA_n$ is
 $n$-dimensional and Hodge-generic. Abelian varieties isogenous to a product $E\times A'$
 form the Hecke translates of $\cA_1\times\cA_{n-1}$, which has codimension $n-1$, so their
 expected intersection with the period image is one-dimensional. Results on the existence
@@ -318,10 +384,10 @@ in $|L|$ into uniruled horizontal and vertical parts that deform with $X$.
 % TODO: I'm not sure that this section should exist, given the absurd pace of advancement 
 % in math at present
 % \subsection{Timeline}
-% \emph{Year 1:} Objective~1(a) and \Cref{q:hitchin}. \emph{Year 2:} Objective~1(b) and
-% \Cref{q:noncompact}. \emph{Year 3:} Objective~3. Objective~1 builds directly on my thesis
-% and should produce results early; Objectives~2 and~3 carry more risk and benefit most from
-% the expertise available at MIT.
+% \emph{Year 1:} \Cref{q:classification} and \Cref{q:hitchin}. \emph{Year 2:} \Cref{q:k3n} and
+% \Cref{q:noncompact}. \emph{Year 3:} \Cref{HKBM}. \Cref{q:classification,q:k3n} build directly
+% on my thesis and should produce results early; \Cref{q:noncompact,q:hitchin} and \Cref{HKBM}
+% carry more risk and benefit most from the expertise available at MIT.
 
 %==========================================================================================
 \section{Career development and choice of sponsoring scientist and host institution}
@@ -393,13 +459,23 @@ Algebraic Geometry Seminar for two semesters, organized a reading group on the W
 conjectures, and organized a seminar on Lie groups. At MIT I will organize a learning
 seminar on Lagrangian fibrations and Hitchin systems, open to graduate students and postdocs
 across the Boston area, and seek support, including from the fellowship allowance, for a
-small workshop for early-career researchers.
+small workshop for early-career researchers. Both will be open to everyone and designed to
+reach researchers who lack local access to this area, including those from groups
+underrepresented in mathematics. Seminar notes and recorded talks will be posted publicly.
+% The workshop will be advertised through broad channels, including the Association for Women
+% in Mathematics, the National Association of Mathematicians, and SACNAS; it will open with
+% introductory lectures for beginning graduate students; and it will prioritize travel support
+% for participants from institutions without a research group in the area, such as primarily
+% undergraduate and minority-serving institutions.
 
 \emph{Teaching and outreach.} I am currently teaching Calculus~II at the University of
-Chicago as a graduate student lecturer, after five semesters as a teaching assistant at UIC.
-I have also judged the QED competition of the Math Circles of Chicago; in Boston I will 
-continue this outreach by volunteering with local math circles and competitions such as 
-HMMT.
+Chicago as a graduate student lecturer, after five semesters as a teaching assistant at UIC,
+a Hispanic-Serving Institution where many students are the first in their families to attend
+college. I have also judged the QED competition of the Math Circles of Chicago; in Boston I
+will continue this outreach by volunteering with local math circles and competitions such as
+HMMT, favoring programs that serve schools with limited access to advanced mathematics. I
+will also seek to mentor undergraduates through the MIT Summer Research Program, which brings
+students from institutions across the country to MIT to prepare them for graduate study.
 
 \emph{Broader scientific impact.} Lagrangian fibrations and Hitchin systems are algebraic
 integrable systems that appear throughout mirror symmetry and mathematical physics; results
