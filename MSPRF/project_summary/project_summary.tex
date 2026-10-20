@@ -1,0 +1,96 @@
+% NSF MSPRF Project Summary (NSF 23-603)
+%
+% Limit: 1 page. Required: separate headings "Overview", "Intellectual Merit", and
+% "Broader Impacts" (a missing heading means return without review). Third person,
+% understandable to a scientifically literate lay reader; not an abstract of the proposal.
+% Uploading as a PDF is allowed only because the summary needs special characters.
+%
+% PAPPG formatting: Computer Modern at >= 11pt, margins >= 1in. Uploaded sections should
+% leave out page numbers (Research.gov paginates). Nothing may be promised here that is
+% not in the Project Description.
+
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage[compact]{titlesec}
+
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.2ex plus .4ex minus .2ex}{0.5ex plus .2ex}
+\setlist{nosep, leftmargin=*}
+
+% Block paragraphs, as in the Project Description.
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3\baselineskip plus 2pt minus 1pt}
+
+\newcommand{\Gm}{\mathbb{G}_m}
+\newcommand{\Sp}{\mathrm{Sp}}
+\newcommand{\SL}{\mathrm{SL}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\section*{Overview}
+
+The PI will study the Hodge theory of Lagrangian fibrations at MIT, with sponsoring
+scientist Davesh Maulik. Hyper-K\"ahler manifolds are basic building blocks of compact
+K\"ahler manifolds with trivial canonical bundle, and classifying them is a fundamental open
+problem. By the recently proven hyper-K\"ahler SYZ conjecture, every known deformation type
+of hyper-K\"ahler manifolds admits Lagrangian fibrations, whose general fibers are 
+abelian varieties of half the dimension. The project asks which abelian varieties 
+occur as such fibers, i.e.\ where the associated period map lands.
+
+The PI's thesis proves that for a non-isotrivial Lagrangian fibration of a $2n$-dimensional
+hyper-K\"ahler manifold, the monodromy is irreducible and the very general fiber has
+Mumford--Tate group $\Gm\cdot(\Sp_{2h})^{n/h}$ up to isogeny, for some $h\mid n$. 
+Equivalently, the fiber is isogenous to a product of $h$-dimensional abelian varieties, 
+each \emph{Hodge-generic} (with no unexpected Hodge classes). Moreover, $h=n$ for a 
+general fibered member of each deformation type with $b_2\ge7$. 
+The research objectives are:
+\begin{enumerate}[label=\textbf{RO \arabic*.}]
+  \item Determine which $h$ occur, and whether $h<n$ forces $K3^{[n]}$ type, using the
+  Donagi--Markman cubic condition to split the period map along algebraic foliations of the
+  base.
+  \item Study non-compact Lagrangian fibrations, chiefly the $\SL_r$ Hitchin fibration (whose
+  monodromy the PI's methods show to be irreducible), and determine the Mumford--Tate group
+  of its very general fiber via Lefschetz theory for spectral curves.
+  \item Work toward the hyper-K\"ahler Bogomolov--Mumford conjecture (a uniruled divisor in
+  every ample linear system), using typical intersections in the moduli of abelian varieties
+  to find families of fibers with an elliptic factor, whose degenerations give rational
+  curves.
+\end{enumerate}
+
+Maulik, a leading expert on abelian fibrations, hyper-K\"ahler varieties, and Hitchin
+systems, will meet with the PI weekly; at MIT the PI will learn the sheaf-theoretic tools
+the project needs, such as perverse filtrations, Fourier--Mukai transforms, and moduli of
+sheaves on K3 surfaces.
+
+\section*{Intellectual Merit}
+
+Since the SYZ theorem makes Lagrangian fibrations the gateway to classifying hyper-K\"ahler
+manifolds, constraints on their fibers bear directly on classification. RO~1 would show that
+decomposable Lagrangian fibrations are exactly those built from elliptic fibrations, as for
+Hilbert schemes of points on elliptic K3 surfaces, and would characterize the $K3^{[n]}$
+deformation type Hodge-theoretically. RO~2 would give a new Hodge-theoretic invariant of the
+Hitchin system, a fundamental integrable system in non-abelian Hodge theory and geometric
+Langlands, complementing recent work on its topology and algebraic cycles. RO~3 would bring
+functional transcendence to bear on rational curves on hyper-K\"ahler manifolds, which are
+tied to their algebraic cycles.
+
+\section*{Broader Impacts}
+
+The PI will organize a learning seminar on Lagrangian fibrations and Hitchin systems for
+Boston-area graduate students and postdocs, and seek support for an early-career workshop.
+Both will be open to all and aimed at researchers without local access to the area, with
+notes and recorded talks posted publicly. The PI will also volunteer with Boston-area math
+circles and competitions such as HMMT, favoring programs serving schools with limited
+access to advanced mathematics, and seek to mentor undergraduates through the MIT Summer
+Research Program. MIT's teacher-training program for new postdocs will further develop the
+PI as an educator. Finally, Lagrangian fibrations and Hitchin systems are integrable systems
+that appear throughout mirror symmetry and mathematical physics, so the results will be
+useful beyond algebraic geometry.
+
+\end{document}
