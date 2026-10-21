@@ -1,0 +1,6 @@
+# ignore all files except .tex, .pdf, and addons
+*
+!*.tex
+!*.pdf
+!*.cls
+!.gitignore
