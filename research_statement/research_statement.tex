@@ -102,20 +102,25 @@
 
 
 
-\title{Research statement}
-\author{Edward Varvak}
-\address{\parbox{\linewidth}{
-Department of Mathematics \\
-University of Chicago \\
-5734 S University Ave \\
-Chicago, IL 60637 \\}}
+% \title{Research statement}
+% \author{Edward Varvak}
+% \address{\parbox{\linewidth}{
+% Department of Mathematics \\
+% University of Chicago \\
+% 5734 S University Ave \\
+% Chicago, IL 60637 \\}}
 
-\email{varvak@uchicago.edu}
+% \email{varvak@uchicago.edu}
 
 
 \begin{document}
 
-\maketitle
+% \maketitle
+
+\begin{center}
+  {\large\textsc{Research Statement}}\\[5pt]
+  \small\textsc{Edward A. Varvak, University of Chicago}
+\end{center}
 
 \section{Summary of my results}
 
@@ -146,7 +151,7 @@ By Schwald \cite{schwald20}, when \(X\) is a primitive symplectic variety admitt
 a Lagrangian fibration \(f: X \to B\), the smooth fibers \(X_b\) are Abelian varieties. 
 My main results further classify the structure of the fibers.
 
-\begin{theorem}[citation needed*] \label{mt-classification}
+\begin{theorem}[\cite{varvak26}] \label{mt-classification}
     Let \(X\) be a primitive symplectic variety of dimension \(2n\) admitting a 
     Lagrangian fibration \(f: X \to B\). If \(f\) is not isotrivial, the Mumford--Tate 
     group of the very general fiber \(X_b\) is isogenous to 
@@ -156,7 +161,7 @@ My main results further classify the structure of the fibers.
 Recall that an Abelian variety is Hodge-generic if it admits no extra Hodge tensors. 
 In this case, it is simple and carries no extra symmetries.
 
-\begin{corollary}[Citation needed*] \label{fiber-structure}
+\begin{corollary}[\cite{varvak26}] \label{fiber-structure}
     The very general fiber \(X_b\) is isogenous to a product of Abelian varieties 
     \(A_1 \times \cdots \times A_{n/h}\), where each \(A_i\) is Hodge-generic and 
     \(A_i\) is not isogenous to \(A_j\) for \(i \neq j\).
@@ -174,13 +179,9 @@ manifolds, which should be thought of as the natural generalization of K3 surfac
 % admitting a Lagrangian fibration, we can say much more about the Mumford--Tate group 
 % of its very general fiber. 
 
-\begin{theorem}[Citation needed*] \label{general-mt}
+\begin{theorem}[\cite{varvak26}] \label{general-mt}
     Let \(\mathcal{X}\) be a deformation class of hyper-K\"ahler manifolds such that 
-    \begin{enumerate}
-        \item all members \(X \in \mathcal{X}\) have second Betti number 
-        \(b_2(X) \geq 7\),
-        \item there exists some \(X \in \mathcal{X}\) admitting a Lagrangian fibration.
-    \end{enumerate}
+    all members \(X \in \mathcal{X}\) have second Betti number \(b_2(X) \geq 7\).
     Choose \(X\) to be general among the hyper-K\"ahler manifolds admitting a Lagrangian 
     fibration, \(f: X \to B\). If \(X_b\) is a very general fiber of \(f\), 
     then its Mumford--Tate group \(\mathbf{MT}(X_b)\) is isogenous to  
@@ -261,16 +262,20 @@ families \(K3^{[n]}\) and \(\mathrm{Kum}_n\), occurring in every even dimension 
 and the two sporadic types \(OG6\) and \(OG10\), occurring in dimensions 6 and 10 
 respectively. 
 
-Now consider the following central conjecture.
-\begin{conjecture}[Hyper-K\"ahler SYZ Conjecture] \label{conjecture-syz}
-    Let \(\mathcal{X}\) be a deformation space of hyper-K\"ahler manifolds. There 
-    exists some \(X \in \mathcal{X}\) which admits a Lagrangian fibration \(f: X \to B\).
-\end{conjecture}
-
-If true, one could make statements about all deformation classes of hyper-K\"ahlers 
-by simply proving them for those admitting Lagrangian fibrations. A recent result 
-\cite{engel25} assumed the SYZ conjecture to show that there are only finitely 
-many deformation classes of hyper-K\"ahlers in any fixed dimension. 
+Now consider the following central result, recently proven by OpenAI
+\cite{openai-syz} and by Engel--Mauri \cite{engel-mauri26}.
+\begin{theorem}[Hyper-K\"ahler SYZ Conjecture] \label{theorem-syz}
+    Let \(X\) be a hyper-K\"ahler manifold and \(L\) a non-trivial nef line bundle
+    with \(q(L) = 0\). Then \(L\) is semiample, and so induces a Lagrangian
+    fibration \(f: X \to B\).
+\end{theorem}
+In particular, if \(b_2 \geq 5\), every deformation space \(\mathcal{X}\) contains
+some \(X\) admitting a Lagrangian fibration. 
+Thus one can make statements about all deformation classes of hyper-K\"ahlers
+with \(b_2 \geq 5\) by proving them for those admitting Lagrangian fibrations.
+For instance, Engel--Mauri combine \Cref{theorem-syz} with \cite{engel25} to show
+that there are only finitely many deformation classes of hyper-K\"ahlers in any
+fixed dimension.
 
 As such, I believe it important to understand the structure of Lagrangian fibrations. 
 Incidentally, it turns out that they carry many constraints.
@@ -298,9 +303,10 @@ common area of study in this field, due to the following conjecture of Matsushit
     Then \(B \simeq \bbP^n\).
 \end{conjecture}
 
-This conjecture was partially resolved due by Hwang in (4). I hope 
-to attack it in some further cases by resolving 
-\Cref{question-deformation-class}.
+This conjecture was partially resolved by Hwang in (4), and was recently proven
+by OpenAI \cite{openai-matsushita} whenever \(X\) is projective. With the base
+thus understood, much of the remaining information in \(f\) is carried by the
+period map \(\cP\), which is the focus of my results.
 
 
 \section{Future directions}
@@ -330,8 +336,10 @@ a Lagrangian fibration realizing the Mumford--Tate group
 \(\mathbb{G}_m \cdot (\Sp_{2h})^k\).
 
 However, notice that the base \((\bbP^h)^{(k)}\) is easily distinguished from 
-projective space when \(h \neq 1\). This ensures that the argument above does not 
-provide a {\it hyper-K\"ahler} manifold \(X\) realizing the prescribed Lagrangian 
+projective space when \(h \neq 1\), whereas the base of a Lagrangian fibration
+on a projective hyper-K\"ahler manifold must be \(\bbP^n\) \cite{openai-matsushita}.
+This ensures that the argument above does not 
+provide a hyper-K\"ahler manifold \(X\) realizing the prescribed Lagrangian 
 fibration \(f: X \to B\).
 
 
@@ -450,7 +458,7 @@ cycle of dimension \(n+1\) in \(\mathrm{CH}^*(X)\).
 
 Thus, we have methods of producing rational curves in the singular fibers of \(f\). 
 However, we want to produce rational curves on all hyper-K\"ahler manifolds, not simply 
-the ones admitting Lagrangian fibrations. If we assume \Cref{conjecture-syz}, 
+the ones admitting Lagrangian fibrations. By \Cref{theorem-syz},
 this reduces to the following question:
 \begin{question}
     Let \(X\) be a hyper-K\"ahler manifold admitting a Lagrangian fibration \(f\). 
